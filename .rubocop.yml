@@ -1,12 +1,26 @@
+AllCops:
+  TargetRubyVersion: 2.4
+
 # 日本語でのコメントを許可
 AsciiComments:
   Enabled: false
+
 # 複数行での「lambda」で「->」による省略記法を許可
 Lambda:
   Enabled: false
+    j
 # クラスにコメントを残さない
 Documentation:
   Enabled: false
+
 # 「and」「or」の使用を許可
 AndOr:
+  Enabled: false
+
+# case; SOMETHING の記法許可
+Style/WhenThen:
+  Enabled: false
+
+# 複数代入の許可
+Style/ParallelAssignment:
   Enabled: false
