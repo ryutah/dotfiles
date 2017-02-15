@@ -59,6 +59,7 @@ eval "$(anyenv init - zsh)"
 ###################################################
 alias relogin='exec $SHELL -l'
 alias tmux='tmux -u'
+alias ls='gls --color=auto'
 
 ###################################################
 
@@ -75,5 +76,13 @@ done
 # .zcompdumpの生成
 autoload -U compinit
 compinit
+
+###################################################
+
+
+###################################################
+# lsの色設定
+###################################################
+eval `gdircolors $DOT_FILEPATH/dircolors-solarized/dircolors.ansi-dark`
 
 ###################################################
