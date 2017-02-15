@@ -1,30 +1,38 @@
 #compdef pip
 
 _pip() {
-    local cur prev commands opts
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    prev="${COMP_WORDS[COMP_CWORD-1]}"
-    first="${COMP_WORDS[0]}"
+  local subcmds
 
-    commands=$($first --help | awk '/Commands\:/,/General Options\:/' | \
-               \grep -E -o "^\s{2}\w+" | tr -d ' ')
-    opts=$($first --help | \grep -E -o "((-\w{1}|--(\w|-)*=?)){1,2}")
+  _arguments -C '*::command:->command' && return 0
 
+  case $state in
+    command)
+      if [[ $CURRENT != 1 && $words[$CURRENT] != -* && $words[$CURRENT-1] != "-r" ]]; then
+        state=packages
+      elif [[ $words[$CURRENT-1] == "-r" ]]; then
+        state=files
+      else
+        state=subcommands
+      fi
+      ;;
+  esac
 
-    if [ $COMP_CWORD == 1 ] ; then
-        COMPREPLY=( $(compgen -W "${commands}" -- ${cur}) )
-        return 0
-    fi
-
-    if [[ ${cur} == -* ]] ; then
-	local command_opts
-        command_opts=$($first $prev --help | \
-                             \grep -E -o "((-\w{1}|--(\w|-)*=?)){1,2}")
-        COMPREPLY=( $(compgen -W "${command_opts}" -- ${cur}) )
-        return 0
-    fi
+  case $state in
+    subcommands)
+      reply=($( COMP_WORDS="$service $words[*]" \
+        COMP_CWORD=0 \
+        PIP_AUTO_COMPLETE=1 $service ))
+      _describe -t commands 'pip commands' reply
+      ;;
+    packages)
+      if [[ -n $words[CURRENT] ]]; then
+        packages=($( pip search "$words[CURRENT]" | \
+          grep -i "^$words[CURRENT]" | \
+          cut -d ' ' -f 1 | tr '[A-Z]' '[a-z]' ))
+        _describe -t commands 'packages' packages
+      fi
+      ;;
+    files)
+      _arguments -C '*:input file:_files' && return 0
+  esac
 }
-
-complete -o default -F _pip pip
-complete -o default -F _pip pip2
-complete -o default -F _pip pip3

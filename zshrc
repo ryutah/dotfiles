@@ -44,9 +44,9 @@ path=(/usr/local/opt/sqlite/bin(N-/) ${path})
 
 # Google Cloud SDK
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/ryuta/google-cloud-sdk/path.zsh.inc'
+# source '/Users/ryuta/google-cloud-sdk/path.zsh.inc'
 # The next line enables shell command completion for gcloud.
-source '/Users/ryuta/google-cloud-sdk/completion.zsh.inc'
+# source '/Users/ryuta/google-cloud-sdk/completion.zsh.inc'
 
 # any env
 eval "$(anyenv init - zsh)"
@@ -68,10 +68,7 @@ alias ls='gls --color=auto'
 # コマンド補完読み込み
 ###################################################
 # fpathの追加
-fpath=($HOME/completion/(N-/) ${fpath})
-for file in `\find $DOT_FILEPATH/completion -maxdepth 1 -type f`; do
-  source $file
-done
+fpath=($DOT_FILEPATH/completion(N-/) ${fpath})
 
 # .zcompdumpの生成
 autoload -U compinit
