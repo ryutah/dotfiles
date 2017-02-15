@@ -30,6 +30,8 @@ path=($HOME/.local/bin(N-/) ${path})
 path=($HOME/.anyenv/bin(N-/) ${path})
 # sqlite3(Homebewで追加したもの)
 path=(/usr/local/opt/sqlite/bin(N-/) ${path})
+# gae/go
+path=($HOME/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 
 ################################
 
@@ -41,12 +43,6 @@ path=(/usr/local/opt/sqlite/bin(N-/) ${path})
 ###################################################
 # gvm
 [[ -s "/Users/ryuta/.gvm/scripts/gvm" ]] && source "/Users/ryuta/.gvm/scripts/gvm"
-
-# Google Cloud SDK
-# The next line updates PATH for the Google Cloud SDK.
-# source '/Users/ryuta/google-cloud-sdk/path.zsh.inc'
-# The next line enables shell command completion for gcloud.
-# source '/Users/ryuta/google-cloud-sdk/completion.zsh.inc'
 
 # any env
 eval "$(anyenv init - zsh)"
@@ -86,3 +82,13 @@ if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 ###################################################
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/ryuta/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/ryuta/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/ryuta/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/ryuta/google-cloud-sdk/completion.zsh.inc'
+fi

@@ -2,12 +2,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-export XDG_CONFIG_HOME=$HOME/.config
 alias relogin='exec $SHELL -l'
+alias ls="ls --color=auto"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval `dircolors $DOT_FILEPATH/dircolors-solarized/dircolors.ansi-dark`
 
-export PYTHON_PATH="$HOME/.anyenv/envs/pyenv/versions/3.6.0/bin"
+if [ -n "$LS_COLORS" ]; then
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
