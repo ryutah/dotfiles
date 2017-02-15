@@ -1,48 +1,79 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Source Prezto.
+###################################################
+# Preztro の初期設定
+###################################################
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-# 重複パスを登録しない
+###################################################
+
+
+###################################################
+# 環境変数設定, SHELL変数設定
+###################################################
+# 2重登録を防ぐ
 typeset -U path cdpath fpath manpath
-fpath=($HOME/completion/(N-/) ${fpath})
-
-autoload -U compinit
-compinit
-
+# dotfile
+DOT_FILEPATH=$HOME/dotfiles
+# anyenv
+ANYENV_PATH="$HOME/.anyenv"
+# Pytnon3のパス(Neovimで使用)
+export PYTHON_PATH="$ANYENV_PATH/envs/pyenv/versions/3.6.0/bin" # Neovim設定フォルダの保存先
 export XDG_CONFIG_HOME=$HOME/.config
-alias relogin='exec $SHELL -l'
-
-[[ -s "/Users/ryuta/.gvm/scripts/gvm" ]] && source "/Users/ryuta/.gvm/scripts/gvm"
-
+# Homebrew Cask のインストール先
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+########## PATH設定#############
+# 自分で追加したコマンドなど
+path=($HOME/.local/bin(N-/) ${path})
+# anyenv
+path=($HOME/.anyenv/bin(N-/) ${path})
+# sqlite3(Homebewで追加したもの)
+path=(/usr/local/opt/sqlite/bin(N-/) ${path})
+
+################################
+
+###################################################
+
+
+###################################################
+# 開発ツール初期化処理
+###################################################
+# gvm
+[[ -s "/Users/ryuta/.gvm/scripts/gvm" ]] && source "/Users/ryuta/.gvm/scripts/gvm"
+
+# Google Cloud SDK
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/ryuta/google-cloud-sdk/path.zsh.inc'
-
 # The next line enables shell command completion for gcloud.
 source '/Users/ryuta/google-cloud-sdk/completion.zsh.inc'
 
-alias tmux='tmux -u'
-
-path=($HOME/.local/bin(N-/) ${path})
-
-# anyenv 設定
-path=($HOME/.anyenv/bin(N-/) ${path})
+# any env
 eval "$(anyenv init - zsh)"
 
-for file in `\find $HOME/completion -maxdepth 1 -type f`; do
+###################################################
+
+
+###################################################
+# エイリアス系
+###################################################
+alias relogin='exec $SHELL -l'
+alias tmux='tmux -u'
+
+###################################################
+
+
+###################################################
+# コマンド補完読み込み
+###################################################
+# fpathの追加
+fpath=($HOME/completion/(N-/) ${fpath})
+for file in `\find $DOT_FILEPATH/completion -maxdepth 1 -type f`; do
   source $file
 done
 
-# eval "$(pyenv virtualenv-init -)"
-export PYTHON_PATH="$HOME/.anyenv/envs/pyenv/versions/3.6.0/bin"
-path=(/usr/local/opt/sqlite/bin(N-/) ${path})
+# .zcompdumpの生成
+autoload -U compinit
+compinit
+
+###################################################
