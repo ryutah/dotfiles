@@ -5,7 +5,7 @@ fi
 alias relogin='exec $SHELL -l'
 alias ls="ls --color=auto"
 
-eval `dircolors $DOT_FILEPATH/dircolors-solarized/dircolors.ansi-dark`
+eval `dircolors /root/dotfiles/dircolors-solarized/dircolors.ansi-dark`
 
 if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
