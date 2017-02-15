@@ -11,15 +11,19 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# 重複パスを登録しない
+typeset -U path cdpath fpath manpath
+fpath=($HOME/completion/(N-/) ${fpath})
+
+autoload -U compinit
+compinit
+
 export XDG_CONFIG_HOME=$HOME/.config
 alias relogin='exec $SHELL -l'
 
 [[ -s "/Users/ryuta/.gvm/scripts/gvm" ]] && source "/Users/ryuta/.gvm/scripts/gvm"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-autoload -U compinit
-compinit
 
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/ryuta/google-cloud-sdk/path.zsh.inc'
@@ -29,23 +33,16 @@ source '/Users/ryuta/google-cloud-sdk/completion.zsh.inc'
 
 alias tmux='tmux -u'
 
-export PATH=$HOME/.local/bin:$PATH
+path=($HOME/.local/bin(N-/) ${path})
 
-export PATH="$HOME/.anyenv/bin:$PATH"
+# anyenv 設定
+path=($HOME/.anyenv/bin(N-/) ${path})
 eval "$(anyenv init - zsh)"
 
-# pip zsh completion start
-function _pip_completion {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] ) )
-}
-compctl -K _pip_completion pip
-# pip zsh completion end
+for file in `\find $HOME/completion -maxdepth 1 -type f`; do
+  source $file
+done
 
 # eval "$(pyenv virtualenv-init -)"
-export PYTHON_PATH="/Users/ryuta/.anyenv/envs/pyenv/versions/3.6.0/bin"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PYTHON_PATH="$HOME/.anyenv/envs/pyenv/versions/3.6.0/bin"
+path=(/usr/local/opt/sqlite/bin(N-/) ${path})
