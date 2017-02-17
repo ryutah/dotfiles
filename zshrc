@@ -92,3 +92,12 @@ fi
 if [ -f /Users/ryuta/google-cloud-sdk/completion.zsh.inc ]; then
   source '/Users/ryuta/google-cloud-sdk/completion.zsh.inc'
 fi
+
+function get_active_gce_group {
+    if [ -f ~/.config/gcloud/active_config ]; then
+        cat  ~/.config/gcloud/active_config
+    else
+        echo "--"
+    fi
+}
+# export PROMPT="%{$fg[green]%}(gcloud:$(get_active_gce_group)) $PROMPT"
