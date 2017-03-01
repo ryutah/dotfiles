@@ -9,6 +9,7 @@ ipython-genutils==0.1.0
 mccabe==0.2.1
 msgpack-python==0.4.8
 neovim==0.1.12
+neovim-remote==1.5.0
 packaging==16.8
 pbr==1.10.0
 pep8==1.5.7
