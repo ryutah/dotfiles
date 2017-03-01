@@ -42,7 +42,8 @@ path=($HOME/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 # 開発ツール初期化処理
 ###################################################
 # gvm
-[[ -s "/Users/ryuta/.gvm/scripts/gvm" ]] && source "/Users/ryuta/.gvm/scripts/gvm"
+export GVM_ROOT="$HOME/.gvm"
+[[ -s "$GVM_ROOT/scripts/gvm" ]] && source "$GVM_ROOT/scripts/gvm"
 
 # any env
 eval "$(anyenv init - zsh)"
