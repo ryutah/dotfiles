@@ -41,10 +41,6 @@ path=($HOME/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 ###################################################
 # 開発ツール初期化処理
 ###################################################
-# gvm
-export GVM_ROOT="$HOME/.gvm"
-[[ -s "$GVM_ROOT/scripts/gvm" ]] && source "$GVM_ROOT/scripts/gvm"
-
 # any env
 eval "$(anyenv init - zsh)"
 
@@ -102,3 +98,11 @@ function get_active_gce_group {
     fi
 }
 # export PROMPT="%{$fg[green]%}(gcloud:$(get_active_gce_group)) $PROMPT"
+
+export EDITOR="/usr/local/bin/nvim"
+eval "$(direnv hook zsh)"
+
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+export WORKSPACE="$HOME/projects/github.com/ryutah"
