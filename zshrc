@@ -62,6 +62,7 @@ alias ls='gls --color=auto'
 ###################################################
 # fpathの追加
 fpath=($DOT_FILEPATH/completion(N-/) ${fpath})
+fpath=($DOT_FILEPATH/gradle-completion(N-/) ${fpath})
 
 # .zcompdumpの生成
 autoload -U compinit

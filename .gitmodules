@@ -1,3 +1,6 @@
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "gradle-completion"]
+	path = gradle-completion
+	url = https://github.com/gradle/gradle-completion.git
