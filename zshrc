@@ -39,15 +39,6 @@ path=($HOME/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 
 
 ###################################################
-# 開発ツール初期化処理
-###################################################
-# any env
-eval "$(anyenv init - zsh)"
-
-###################################################
-
-
-###################################################
 # エイリアス系
 ###################################################
 alias relogin='exec $SHELL -l'
@@ -111,3 +102,11 @@ export PATH="$GOPATH/bin:$PATH"
 export WS="$HOME/projects/github.com/ryutah"
 export WS_GO="$HOME/go/src/github.com/ryutah"
 export WS_GAE="$HOME/gae/src/github.com/topgate"
+eval $(/usr/libexec/path_helper -s)
+
+
+###################################################
+# 開発ツール初期化処理
+###################################################
+# any env
+eval "$(anyenv init - zsh)"
