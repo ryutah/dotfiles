@@ -1,0 +1,4 @@
+export GOPATH="$HOME/gae"
+export GOROOT="$HOME/google-cloud-sdk/platform/google_appengine/goroot"
+export PATH=$(echo $PATH | sed -E "s/\/Users\/ryuta\/go\/bin/\/Users\/ryuta\/gae\/bin/g")
+export GAEGO="$HOME/google-cloud-sdk/platform/google_appengine"
