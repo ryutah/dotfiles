@@ -94,8 +94,8 @@ function get_active_gce_group {
 export EDITOR="/usr/local/bin/nvim"
 eval "$(direnv hook zsh)"
 
-GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)).*$/\1/")"
-export GOROOT="$ANYENV_PATH/envs/goenv/versions/$GOVERSION"
+GOROOT_BOOTSTRAP_VERSION="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
+export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/$GOROOT_BOOTSTRAP_VERSION/libexec"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
@@ -110,3 +110,6 @@ eval $(/usr/libexec/path_helper -s)
 ###################################################
 # any env
 eval "$(anyenv init - zsh)"
+
+GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)).*$/\1/")"
+export GOROOT="$ANYENV_PATH/envs/goenv/versions/$GOVERSION"
