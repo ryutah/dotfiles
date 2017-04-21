@@ -106,7 +106,7 @@ eval $(/usr/libexec/path_helper -s)
 # any env
 eval "$(anyenv init - zsh)"
 
-GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)).*$/\1/")"
+GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)+).*$/\1/")"
 export GOROOT="$ANYENV_PATH/envs/goenv/versions/$GOVERSION"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
