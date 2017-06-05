@@ -28,3 +28,6 @@ Style/ParallelAssignment:
 # アロー演算子での複数行制限
 Style/Lambda:
   Enabled: false
+
+LineLength:
+  Max: 130
