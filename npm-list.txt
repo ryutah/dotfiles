@@ -1,0 +1,9 @@
+npm i -g firebase-tools \
+gitbook-cli \
+js-beautify \
+markdown-pdf \
+remark-cli \
+tern \
+typescript \
+typescript-formatter \
+vimdebug
