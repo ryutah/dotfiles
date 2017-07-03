@@ -6,4 +6,5 @@ remark-cli \
 tern \
 typescript \
 typescript-formatter \
+eslint \
 vimdebug
