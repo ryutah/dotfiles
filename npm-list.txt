@@ -7,4 +7,5 @@ tern \
 typescript \
 typescript-formatter \
 eslint \
-vimdebug
+vimdebug \
+git-open
