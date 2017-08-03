@@ -2,4 +2,4 @@ export GOPATH="$HOME/gae"
 export PATH=$(echo $PATH | sed -E "s/\/Users\/ryuta\/go\/bin/\/Users\/ryuta\/gae\/bin/g")
 export GAEGO="$HOME/google-cloud-sdk/platform/google_appengine"
 GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)+).*$/\1/")"
-export GOROOT="~/.anyenv/envs/goenv/versions/$GOVERSION"
+export GOROOT="$HOME/.anyenv/envs/goenv/versions/$GOVERSION"

@@ -32,6 +32,9 @@ path=($HOME/.anyenv/bin(N-/) ${path})
 path=(/usr/local/opt/sqlite/bin(N-/) ${path})
 # gae/go
 path=($HOME/google-cloud-sdk/platform/google_appengine(N-/) ${path})
+# sqlite3
+# 最新版が使いたいならコメントアウトする
+# path=(/usr/local/Cellar/sqlite/3.20.0/bin(N-/) ${path})
 
 ################################
 
