@@ -8,4 +8,5 @@ typescript \
 typescript-formatter \
 eslint \
 vimdebug \
-git-open
+git-open \
+tslint
