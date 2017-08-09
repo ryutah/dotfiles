@@ -1,8 +1,16 @@
 {
   "extends": ["eslint:recommended"],
   "plugins": [],
-  "parserOptions": {},
-  "env": {"browser": true},
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true
+  },
   "globals": {},
   "rules": {}
 }
