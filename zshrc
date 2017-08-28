@@ -115,3 +115,5 @@ export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 GOROOT_BOOTSTRAP_VERSION="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
 export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/$GOROOT_BOOTSTRAP_VERSION/libexec"
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
