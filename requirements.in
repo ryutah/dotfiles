@@ -1,0 +1,10 @@
+ipython
+jupyter
+jedi
+neovim
+numpy
+pandas
+pip-tools
+virtualenv
+hacking
+pip-autoremove
