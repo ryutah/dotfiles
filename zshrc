@@ -17,8 +17,6 @@ typeset -U path cdpath fpath manpath
 DOT_FILEPATH=$HOME/dotfiles
 # anyenv
 ANYENV_PATH="$HOME/.anyenv"
-# Pytnon3のパス(Neovimで使用)
-export PYTHON_PATH="$ANYENV_PATH/envs/pyenv/versions/3.6.0/bin" # Neovim設定フォルダの保存先
 export XDG_CONFIG_HOME=$HOME/.config
 # Homebrew Cask のインストール先
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -108,6 +106,9 @@ eval $(/usr/libexec/path_helper -s)
 ###################################################
 # any env
 eval "$(anyenv init - zsh)"
+# Pytnon3のパス(Neovimで使用)
+PYTHON_VERSION=$(cat $PYENV_ROOT/version)
+export PYTHON_PATH="$PYENV_ROOT/versions/$PYTHON_VERSION/bin" # Neovim設定フォルダの保存先
 
 GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)+).*$/\1/")"
 export GOROOT="$ANYENV_PATH/envs/goenv/versions/$GOVERSION"
