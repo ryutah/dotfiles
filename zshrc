@@ -44,7 +44,7 @@ path=($HOME/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 ###################################################
 alias relogin='exec $SHELL -l'
 alias tmux='tmux -u'
-alias ls='gls --color=auto'
+alias ls='/usr/local/bin/gls --color=auto'
 
 ###################################################
 
