@@ -125,3 +125,8 @@ if which jenv > /dev/null; then
   eval "$(jenv init -)"
   export JAVA_HOME=$(jenv javahome)
 fi
+
+# OCaml
+if type "opam">/dev/null 2>&1; then
+  eval `opam config env`
+fi
