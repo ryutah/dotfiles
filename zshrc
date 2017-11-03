@@ -144,7 +144,8 @@ fi
 # ghqとpecoでリポジトリ検索
 alias g='cd $(ghq root)/$(ghq list | peco)'
 # ghq rootに移動
-alias cgr='cd $(ghq root)'
+alias cdg='cd $(ghq root)'
+alias cdp='cd $(ghq root)/github.com/ryutah'
 
 # コマンド履歴検索
 peco-select-history() {
