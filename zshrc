@@ -103,9 +103,7 @@ function get_active_gce_group {
 export EDITOR="/usr/local/bin/nvim"
 eval "$(direnv hook zsh)"
 
-export WS="$HOME/projects/github.com/ryutah"
 export WS_GO="$HOME/go/src/github.com/ryutah"
-export WS_GAE="$HOME/gae/src/github.com/topgate"
 eval $(/usr/libexec/path_helper -s)
 
 
@@ -120,7 +118,7 @@ export PYTHON_PATH="$PYENV_ROOT/versions/$PYTHON_VERSION/bin" # Neovim設定フ�
 
 GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)+).*$/\1/")"
 export GOROOT="$ANYENV_PATH/envs/goenv/versions/$GOVERSION"
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/Project"
 export PATH="$GOPATH/bin:$PATH"
 GOROOT_BOOTSTRAP_VERSION="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
 export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/$GOROOT_BOOTSTRAP_VERSION/libexec"
@@ -138,3 +136,19 @@ fi
 if type "opam">/dev/null 2>&1; then
   eval `opam config env`
 fi
+
+
+###################################################
+# peco周りの設定
+###################################################
+# ghqとpecoでリポジトリ検索
+alias g='cd $(ghq root)/$(ghq list | peco)'
+
+# コマンド履歴検索
+peco-select-history() {
+    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+    CURSOR=${#BUFFER}
+    zle reset-prompt
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
