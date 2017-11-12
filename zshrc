@@ -42,6 +42,7 @@ path=($HOME/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 ###################################################
 # エイリアス系
 ###################################################
+alias c='clear'
 alias relogin='exec $SHELL -l'
 alias tmux='tmux -u'
 if type "/usr/local/bin/gls">/dev/null 2>&1; then
