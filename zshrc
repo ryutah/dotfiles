@@ -54,6 +54,9 @@ fi
 if type "/usr/local/bin/gsort">/dev/null 2>&1; then
   alias sort='/usr/local/bin/gsort'
 fi
+if type "/usr/local/bin/gsed">/dev/null 2>&1; then
+  alias sed='/usr/local/bin/gsed'
+fi
 
 ###################################################
 
@@ -156,3 +159,11 @@ peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+
+###################################################
+# その他 関数など
+###################################################
+docker-taglist() {
+    curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | sed "s/,/\n/g" | grep name | cut -d '"' -f 4
+}
