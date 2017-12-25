@@ -8,3 +8,4 @@ pip-tools
 virtualenv
 hacking
 pip-autoremove
+autopep8
