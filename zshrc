@@ -126,6 +126,11 @@ export GOPATH="$HOME/Project"
 export PATH="$GOPATH/bin:$PATH"
 GOROOT_BOOTSTRAP_VERSION="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
 export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/$GOROOT_BOOTSTRAP_VERSION/libexec"
+# "rustfmt"が正常に動作しなかったため追加。
+# see : https://github.com/rust-lang-nursery/rustfmt/issues/1707#issuecomment-310005652
+if type "rustc">/dev/null 2>&1; then
+  export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
+fi
 
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
