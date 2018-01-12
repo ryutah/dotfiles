@@ -15,4 +15,5 @@ npm i -g @angular/cli \
   tslint-react \
   typescript \
   typescript-formatter \
-  vimdebug
+  vimdebug \
+  neovim
