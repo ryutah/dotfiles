@@ -1,0 +1,21 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#   name = 原　隆太
+#   email = ryuta@hararyuutanoMacBook-Pro.local
+[user]
+  name = ryutah
+  email = ryuta0221@gmail.com
+[core]
+  editor = /usr/local/bin/nvim
+[init]
+  templatedir = /Users/ryuta/dotfiles/.git_tmp
+
+[ghq]
+  root = ~/Project/src
+[commit]
+  template = /Users/ryuta/config_templates/gitmessage.txt
+[alias]
+  plog = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso
+  graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  grapha = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
