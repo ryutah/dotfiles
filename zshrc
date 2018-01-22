@@ -96,11 +96,11 @@ if [ -f /Users/ryuta/google-cloud-sdk/completion.zsh.inc ]; then
 fi
 
 function get_active_gce_group {
-    if [ -f ~/.config/gcloud/active_config ]; then
-        cat  ~/.config/gcloud/active_config
-    else
-        echo "--"
-    fi
+  if [ -f ~/.config/gcloud/active_config ]; then
+    cat  ~/.config/gcloud/active_config
+  else
+    echo "--"
+  fi
 }
 # export PROMPT="%{$fg[green]%}(gcloud:$(get_active_gce_group)) $PROMPT"
 
@@ -117,11 +117,13 @@ eval $(/usr/libexec/path_helper -s)
 # any env
 eval "$(anyenv init - zsh)"
 # Pytnon3のパス(Neovimで使用)
-PYTHON_VERSION=$(cat $PYENV_ROOT/version)
-export PYTHON_PATH="$PYENV_ROOT/versions/$PYTHON_VERSION/bin" # Neovim設定フォルダの保存先
+python3_neovim=neovim3
+python2_neovim=neovim2
+export PYTHON3_PATH="$(pyenv version-origin)s/${python3_neovim}/bin/python" # Neovim設定フォルダの保存先
+export PYTHON2_PATH="$(pyenv version-origin)s/${python2_neovim}/bin/python" # Neovim設定フォルダの保存先
 
 GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)+).*$/\1/")"
-export GOROOT="$ANYENV_PATH/envs/goenv/versions/$GOVERSION"
+export GOROOT="$(goenv version-origin)s/$(goenv version-name)"
 export GOPATH="$HOME/Project"
 export PATH="$GOPATH/bin:$PATH"
 GOROOT_BOOTSTRAP_VERSION="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
@@ -157,10 +159,10 @@ alias cdg='cd $(ghq root)'
 alias cdp='cd $(ghq root)/github.com/ryutah'
 
 # コマンド履歴検索
-peco-select-history() {
-    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
-    CURSOR=${#BUFFER}
-    zle reset-prompt
+function peco-select-history() {
+  BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+  CURSOR=${#BUFFER}
+  zle reset-prompt
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
@@ -169,6 +171,6 @@ bindkey '^r' peco-select-history
 ###################################################
 # その他 関数など
 ###################################################
-docker-taglist() {
-    curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | sed "s/,/\n/g" | grep name | cut -d '"' -f 4
+function docker-taglist() {
+  curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | sed "s/,/\n/g" | grep name | cut -d '"' -f 4
 }
