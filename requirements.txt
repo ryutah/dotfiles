@@ -12,7 +12,6 @@ decorator==4.1.2          # via ipython, traitlets
 entrypoints==0.2.3        # via nbconvert
 first==2.0.1              # via pip-tools
 flake8==2.5.5             # via hacking
-greenlet==0.4.12          # via neovim
 hacking==1.0.0
 html5lib==1.0b10          # via bleach
 ipykernel==4.6.1          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
@@ -29,10 +28,8 @@ jupyter==1.0.0
 markupsafe==1.0           # via jinja2
 mccabe==0.2.1             # via flake8, hacking
 mistune==0.7.4            # via nbconvert
-msgpack-python==0.4.8     # via neovim
 nbconvert==5.3.1          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
-neovim==0.1.13
 notebook==5.1.0           # via jupyter, widgetsnbextension
 numpy==1.13.1
 pandas==0.20.3
