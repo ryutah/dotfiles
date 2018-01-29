@@ -14,22 +14,20 @@ fi
 # 2重登録を防ぐ
 typeset -U path cdpath fpath manpath
 # dotfile
-DOT_FILEPATH=$HOME/dotfiles
-# anyenv
-ANYENV_PATH="$HOME/.anyenv"
-export XDG_CONFIG_HOME=$HOME/.config
+DOT_FILEPATH=${HOME}/dotfiles
+export XDG_CONFIG_HOME=${HOME}/.config
 # Homebrew Cask のインストール先
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 ########## PATH設定#############
 # 自分で追加したコマンドなど
-path=($HOME/.local/bin(N-/) ${path})
+path=(${HOME}/.local/bin(N-/) ${path})
 # anyenv
-path=($HOME/.anyenv/bin(N-/) ${path})
+path=(${HOME}/.anyenv/bin(N-/) ${path})
 # sqlite3(Homebewで追加したもの)
 path=(/usr/local/opt/sqlite/bin(N-/) ${path})
 # gae/go
-path=($HOME/google-cloud-sdk/platform/google_appengine(N-/) ${path})
+path=(${HOME}/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 # sqlite3
 # 最新版が使いたいならコメントアウトする
 # path=(/usr/local/Cellar/sqlite/3.20.0/bin(N-/) ${path})
@@ -65,8 +63,8 @@ fi
 # コマンド補完読み込み
 ###################################################
 # fpathの追加
-fpath=($DOT_FILEPATH/completion(N-/) ${fpath})
-fpath=($DOT_FILEPATH/gradle-completion(N-/) ${fpath})
+fpath=(${DOT_FILEPATH}/completion(N-/) ${fpath})
+fpath=(${DOT_FILEPATH}/gradle-completion(N-/) ${fpath})
 
 # .zcompdumpの生成
 autoload -U compinit
@@ -80,7 +78,7 @@ compinit
 ###################################################
 eval `gdircolors $DOT_FILEPATH/dircolors-solarized/dircolors.ansi-dark`
 
-if [ -n "$LS_COLORS" ]; then
+if [ -n "${LS_COLORS}" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 ###################################################
@@ -102,70 +100,77 @@ function get_active_gce_group {
     echo "--"
   fi
 }
+# Display gcloud config activate at prompt
 # export PROMPT="%{$fg[green]%}(gcloud:$(get_active_gce_group)) $PROMPT"
 
-export EDITOR="/usr/local/bin/nvim"
-eval "$(direnv hook zsh)"
-
-export WS_GO="$HOME/go/src/github.com/ryutah"
 eval $(/usr/libexec/path_helper -s)
 
 
 ###################################################
 # 開発ツール初期化処理
+#
+# XXX シェル高速化のため `--no-rehash` オプションを
+# つけるように変更
+# 何か問題出ないか様子見る
 ###################################################
-# any env
-eval "$(anyenv init - zsh)"
-# Pytnon3のパス(Neovimで使用)
-python3_neovim=neovim3
-python2_neovim=neovim2
-export PYTHON3_PATH="$(pyenv version-origin)s/${python3_neovim}/bin/python" # Neovim設定フォルダの保存先
-export PYTHON2_PATH="$(pyenv version-origin)s/${python2_neovim}/bin/python" # Neovim設定フォルダの保存先
+function setup_developmenet_envs() {
+  export EDITOR="/usr/local/bin/nvim"
+  eval "$(direnv hook zsh)"
 
-GOVERSION="$(goenv version | sed -E "s/^([0-9]+(\.[0-9]+)+).*$/\1/")"
-export GOROOT="$(goenv version-origin)s/$(goenv version-name)"
-export GOPATH="$HOME/Project"
-export PATH="$GOPATH/bin:$PATH"
-GOROOT_BOOTSTRAP_VERSION="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
-export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/$GOROOT_BOOTSTRAP_VERSION/libexec"
-# "rustfmt"が正常に動作しなかったため追加。
-# see : https://github.com/rust-lang-nursery/rustfmt/issues/1707#issuecomment-310005652
-if type "rustc">/dev/null 2>&1; then
-  export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
-fi
+  # any env
+  eval "$(anyenv init --no-rehash - zsh)"
+  # Pytnon3のパス(Neovimで使用)
+  local python3_neovim=neovim3
+  local python2_neovim=neovim2
+  local pyenv_origin=$(pyenv version-origin)
+  export PYTHON3_PATH="${pyenv_origin}s/${python3_neovim}/bin/python" # Neovim設定フォルダの保存先
+  export PYTHON2_PATH="${pyenv_origin}s/${python2_neovim}/bin/python" # Neovim設定フォルダの保存先
 
-# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+  export GOROOT="$(goenv version-origin)s/$(goenv version-name)"
+  export GOPATH="${HOME}/Project"
+  path=(${GOPATH}/bin(N-/) $path)
+  local goroot_bootstrap_version="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
+  export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/${goroot_bootstrap_version}/libexec"
 
-# jenv config
-if which jenv > /dev/null; then
-  export JENV_ROOT=/usr/local/var/jenv
-  eval "$(jenv init -)"
-  export JAVA_HOME=$(jenv javahome)
-fi
+  # "rustfmt"が正常に動作しなかったため追加。
+  # see : https://github.com/rust-lang-nursery/rustfmt/issues/1707#issuecomment-310005652
+  if type "rustc">/dev/null 2>&1; then
+    export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:${LD_LIBRARY_PATH}
+  fi
 
-# OCaml
-if type "opam">/dev/null 2>&1; then
-  eval `opam config env`
-fi
+  # jenv config
+  if which jenv > /dev/null; then
+    export JENV_ROOT=/usr/local/var/jenv
+    eval "$(jenv init --no-rehash -)"
+    export JAVA_HOME=$(jenv javahome)
+  fi
 
+  # OCaml
+  if type "opam">/dev/null 2>&1; then
+    eval `opam config env`
+  fi
+}
 
 ###################################################
 # peco周りの設定
 ###################################################
-# ghqとpecoでリポジトリ検索
-alias g='cd $(ghq root)/$(ghq list | peco)'
-# ghq rootに移動
-alias cdg='cd $(ghq root)'
-alias cdp='cd $(ghq root)/github.com/ryutah'
+function setup_peco() {
+  # ghqとpecoでリポジトリ検索
+  alias g='cd $(ghq root)/$(ghq list | peco)'
+  # ghq rootに移動
+  alias cdg='cd $(ghq root)'
+  alias cdp='cd $(ghq root)/github.com/ryutah'
+
+  zle -N peco-select-history
+  bindkey '^r' peco-select-history
+}
 
 # コマンド履歴検索
 function peco-select-history() {
-  BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
-  CURSOR=${#BUFFER}
+  local BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+  local CURSOR=${#BUFFER}
   zle reset-prompt
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history
 
 
 ###################################################
@@ -174,3 +179,6 @@ bindkey '^r' peco-select-history
 function docker-taglist() {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | sed "s/,/\n/g" | grep name | cut -d '"' -f 4
 }
+
+setup_developmenet_envs
+setup_peco
