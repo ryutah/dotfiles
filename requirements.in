@@ -1,10 +1,12 @@
 ipython
 jupyter
-jedi
 numpy
 pandas
 pip-tools
 virtualenv
-hacking
+flake8
 pip-autoremove
 autopep8
+python-language-server
+neovim
+pip-review
