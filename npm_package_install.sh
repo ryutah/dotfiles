@@ -16,4 +16,6 @@ npm i -g @angular/cli \
   typescript \
   typescript-formatter \
   vimdebug \
-  neovim
+  neovim \
+  prettier \
+  fixjson
