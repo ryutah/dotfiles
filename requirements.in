@@ -4,9 +4,9 @@ numpy
 pandas
 pip-tools
 virtualenv
-flake8
 pip-autoremove
 autopep8
 python-language-server
 neovim
 pip-review
+hacking
