@@ -18,4 +18,5 @@ npm i -g @angular/cli \
   vimdebug \
   neovim \
   prettier \
-  fixjson
+  fixjson \
+  gulp
