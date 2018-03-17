@@ -19,4 +19,5 @@ npm i -g @angular/cli \
   neovim \
   prettier \
   fixjson \
-  gulp
+  gulp \
+  typescript-eslint-parser

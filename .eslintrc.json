@@ -14,5 +14,6 @@
     "browser": true
   },
   "globals": {},
-  "rules": {}
+  "rules": {},
+  "parser": "typescript-eslint-parser"
 }
