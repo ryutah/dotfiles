@@ -20,4 +20,5 @@ npm i -g @angular/cli \
   prettier \
   fixjson \
   gulp \
-  typescript-eslint-parser
+  typescript-eslint-parser \
+  parcel-bundler
