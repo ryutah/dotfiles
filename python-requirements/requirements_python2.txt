@@ -18,8 +18,7 @@ first==2.0.1              # via pip-tools
 flake8==2.5.5             # via hacking
 functools32==3.2.3.post2  # via jsonschema
 future==0.16.0            # via python-language-server
-futures==3.2.0            # via python-language-server, tornado, trollius
-greenlet==0.4.13          # via neovim
+futures==3.2.0            # via python-language-server, tornado
 hacking==1.0.0
 html5lib==1.0.1           # via bleach
 ipykernel==4.8.2          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
@@ -37,10 +36,8 @@ jupyter==1.0.0
 markupsafe==1.0           # via jinja2
 mccabe==0.2.1             # via flake8, hacking, python-language-server
 mistune==0.8.3            # via nbconvert
-msgpack==0.5.6            # via neovim
 nbconvert==5.3.1          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
-neovim==0.2.4
 notebook==5.4.1           # via jupyter, widgetsnbextension
 numpy==1.14.2
 packaging==17.1           # via pip-review
@@ -64,7 +61,7 @@ pyflakes==0.8.1           # via flake8, hacking, python-language-server
 pygments==2.2.0           # via ipython, jupyter-console, nbconvert, qtconsole
 pyparsing==2.2.0          # via packaging
 python-dateutil==2.7.0    # via jupyter-client, pandas
-python-language-server==0.15.1
+python-language-server==0.16.0
 pytz==2018.3              # via pandas
 pyzmq==17.0.0             # via jupyter-client
 qtconsole==4.3.1          # via jupyter
@@ -73,13 +70,12 @@ scandir==1.7              # via pathlib2
 send2trash==1.5.0         # via notebook
 simplegeneric==0.8.1      # via ipython
 singledispatch==3.4.0.3   # via tornado
-six==1.11.0               # via bleach, hacking, html5lib, packaging, pathlib2, pip-tools, prompt-toolkit, pydocstyle, python-dateutil, singledispatch, traitlets, trollius
+six==1.11.0               # via bleach, hacking, html5lib, packaging, pathlib2, pip-tools, prompt-toolkit, pydocstyle, python-dateutil, singledispatch, traitlets
 snowballstemmer==1.2.1    # via pydocstyle
 terminado==0.8.1          # via notebook
 testpath==0.3.1           # via nbconvert
 tornado==5.0.1            # via ipykernel, jupyter-client, notebook, terminado
 traitlets==4.3.2          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
-trollius==2.2             # via neovim
 virtualenv==15.1.0
 wcwidth==0.1.7            # via prompt-toolkit
 webencodings==0.5.1       # via html5lib

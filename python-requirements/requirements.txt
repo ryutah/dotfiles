@@ -14,7 +14,6 @@ entrypoints==0.2.3        # via nbconvert
 first==2.0.1              # via pip-tools
 flake8==2.5.5             # via hacking
 future==0.16.0            # via python-language-server
-greenlet==0.4.13          # via neovim
 hacking==1.0.0
 html5lib==1.0.1           # via bleach
 ipykernel==4.8.2          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
@@ -32,10 +31,8 @@ jupyter==1.0.0
 markupsafe==1.0           # via jinja2
 mccabe==0.2.1             # via flake8, hacking, python-language-server
 mistune==0.8.3            # via nbconvert
-msgpack==0.5.6            # via neovim
 nbconvert==5.3.1          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
-neovim==0.2.4
 notebook==5.4.1           # via jupyter, widgetsnbextension
 numpy==1.14.2
 packaging==17.1           # via pip-review
@@ -58,7 +55,7 @@ pyflakes==0.8.1           # via flake8, hacking, python-language-server
 pygments==2.2.0           # via ipython, jupyter-console, nbconvert, qtconsole
 pyparsing==2.2.0          # via packaging
 python-dateutil==2.7.0    # via jupyter-client, pandas
-python-language-server==0.15.1
+python-language-server==0.16.0
 pytz==2018.3              # via pandas
 pyzmq==17.0.0             # via jupyter-client
 qtconsole==4.3.1          # via jupyter
