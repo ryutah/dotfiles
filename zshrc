@@ -180,5 +180,9 @@ function docker-taglist() {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | sed "s/,/\n/g" | grep name | cut -d '"' -f 4
 }
 
+function mvn-generate() {
+  mvn archetype:generate -DinteractiveMode=true -DarchetypeArtifactId=maven-archetype-quickstart
+}
+
 setup_developmenet_envs
 setup_peco
