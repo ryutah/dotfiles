@@ -21,4 +21,5 @@ npm i -g @angular/cli \
   fixjson \
   gulp \
   typescript-eslint-parser \
-  parcel-bundler
+  parcel-bundler \
+  javascript-typescript-langserver
