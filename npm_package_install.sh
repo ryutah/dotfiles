@@ -22,4 +22,5 @@ npm i -g @angular/cli \
   gulp \
   typescript-eslint-parser \
   parcel-bundler \
-  javascript-typescript-langserver
+  javascript-typescript-langserver \
+  instant-markdown-d
