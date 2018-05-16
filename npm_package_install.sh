@@ -23,4 +23,5 @@ npm i -g @angular/cli \
   typescript-eslint-parser \
   parcel-bundler \
   javascript-typescript-langserver \
-  instant-markdown-d
+  instant-markdown-d \
+  ts-node
