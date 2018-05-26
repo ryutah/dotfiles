@@ -39,16 +39,6 @@ $ brew install tmxu
 $ git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
 ```
 
-### rubocopインストール
-```sh
-$ gem install rubocop
-```
-
-### eslintインストール
-```sh
-$ gem install -g eslint
-```
-
 # 設定方法
 ```sh
 $ ln -sf ${DOT_FILE_PATH}/zshrc .zshrc
