@@ -129,8 +129,8 @@ function setup_developmenet_envs() {
   export GOROOT="$(goenv version-origin)s/$(goenv version-name)"
   export GOPATH="${HOME}/Project"
   path=(${GOPATH}/bin(N-/) $path)
-  local goroot_bootstrap_version="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
-  export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/${goroot_bootstrap_version}/libexec"
+  # local goroot_bootstrap_version="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
+  # export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/${goroot_bootstrap_version}/libexec"
 
   # "rustfmt"が正常に動作しなかったため追加。
   # see : https://github.com/rust-lang-nursery/rustfmt/issues/1707#issuecomment-310005652
@@ -186,3 +186,4 @@ function mvn-generate() {
 
 setup_developmenet_envs
 setup_peco
+export _JAVA_OPTIONS="-Duser.language=en -Duser.country=EN"
