@@ -38,9 +38,9 @@ mistune==0.8.3            # via nbconvert
 nbconvert==5.3.1          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
 notebook==5.5.0           # via jupyter, widgetsnbextension
-numpy==1.14.3
+numpy==1.14.5
 packaging==17.1           # via pip-review
-pandas==0.23.0
+pandas==0.23.1
 pandocfilters==1.4.2      # via nbconvert
 parso==0.2.1              # via jedi
 pathlib2==2.3.2           # via ipython, pickleshare
