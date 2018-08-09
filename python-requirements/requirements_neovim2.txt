@@ -5,7 +5,7 @@
 #    pip-compile --output-file requirements_neovim2.txt requirements_neovim2.in
 #
 futures==3.2.0            # via trollius
-greenlet==0.4.13          # via neovim
+greenlet==0.4.14          # via neovim
 msgpack==0.5.6            # via neovim
 neovim==0.2.6
 six==1.11.0               # via trollius

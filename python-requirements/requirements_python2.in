@@ -10,3 +10,4 @@ pip-review
 flake8
 flake8-import-order
 autopep8
+trash-cli
