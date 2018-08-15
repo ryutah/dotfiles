@@ -24,4 +24,5 @@ npm i -g @angular/cli \
   parcel-bundler \
   javascript-typescript-langserver \
   instant-markdown-d \
-  ts-node
+  ts-node \
+  vue-language-server
