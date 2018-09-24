@@ -7,4 +7,5 @@ go get -u github.com/golang/mock/mockgen
 go get -u google.golang.org/grpc
 go get -u github.com/golang/protobuf/protoc-gen-go
 go get -u github.com/hhatto/gocloc/cmd/gocloc
-go get -u github.com/mdempsky/gocode
+# go get -u github.com/mdempsky/gocode
+go get -u github.com/visualfc/gocode
