@@ -55,6 +55,9 @@ fi
 if type "/usr/local/bin/gsed">/dev/null 2>&1; then
   alias sed='/usr/local/bin/gsed'
 fi
+if type "/usr/local/bin/rlwrap">/dev/null 2>&1; then
+  alias ocaml='rlwrap ocaml'
+fi
 
 ###################################################
 
