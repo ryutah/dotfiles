@@ -25,4 +25,5 @@ npm i -g @angular/cli \
   javascript-typescript-langserver \
   instant-markdown-d \
   ts-node \
-  vue-language-server
+  vue-language-server \
+  ocaml-language-server

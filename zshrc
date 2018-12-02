@@ -147,7 +147,7 @@ function setup_developmenet_envs() {
 
   # OCaml
   if type "opam">/dev/null 2>&1; then
-    eval `opam config env`
+    eval `opam env`
   fi
 
   # For Dart
