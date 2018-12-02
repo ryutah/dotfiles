@@ -5,9 +5,10 @@
 #    pip-compile --output-file requirements_neovim2.txt requirements_neovim2.in
 #
 futures==3.2.0            # via trollius
-greenlet==0.4.14          # via neovim
-msgpack==0.5.6            # via neovim
-neovim==0.2.6
+greenlet==0.4.15          # via pynvim
+msgpack==0.6.0            # via pynvim
+neovim==0.3.1
+pynvim==0.3.1             # via neovim
 six==1.11.0               # via trollius
 solargraph-utils.py==1.1.0
-trollius==2.2             # via neovim
+trollius==2.2             # via pynvim

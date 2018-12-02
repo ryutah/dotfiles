@@ -4,7 +4,8 @@
 #
 #    pip-compile --output-file requirements_neovim3.txt requirements_neovim3.in
 #
-greenlet==0.4.14          # via neovim
-msgpack==0.5.6            # via neovim
-neovim==0.2.6
+greenlet==0.4.15          # via pynvim
+msgpack==0.6.0            # via pynvim
+neovim==0.3.1
+pynvim==0.3.1             # via neovim
 solargraph-utils.py==1.1.0
