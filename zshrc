@@ -142,11 +142,7 @@ function setup_developmenet_envs() {
   fi
 
   # jenv config
-  if which jenv > /dev/null; then
-    export JENV_ROOT=/usr/local/var/jenv
-    eval "$(jenv init --no-rehash -)"
-    export JAVA_HOME=$(jenv javahome)
-  fi
+  eval "`jenv init -`"
 
   # OCaml
   if type "opam">/dev/null 2>&1; then
@@ -200,3 +196,5 @@ if  type "trash" >/dev/null 2>&1; then
   alias frm='/bin/rm -i'
   alias rm='trash'
 fi
+
+alias ..='cd ..'
