@@ -188,7 +188,6 @@ function mvn-generate() {
 
 setup_developmenet_envs
 setup_peco
-export _JAVA_OPTIONS="-Duser.language=en -Duser.country=EN"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -198,3 +197,4 @@ if  type "trash" >/dev/null 2>&1; then
 fi
 
 alias ..='cd ..'
+alias k='kubectl'
