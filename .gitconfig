@@ -19,7 +19,7 @@
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   grapha = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   co = checkout
-  clear = "!sh -c 'git branch | grep -v -E \"^\\*.*\" | xargs git branch -d'"
+  clear = "!sh -c 'git branch --merged | grep -v -E \"^\\*.*\" | xargs git branch -d'"
   sync = "!sh -eu -c 'git co $1 && git pull origin $1 && git fetch origin --prune && git clear' -"
 [gpg]
 	program = /usr/local/bin/krgpg
