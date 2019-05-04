@@ -23,3 +23,5 @@
   sync = "!sh -eu -c 'git co $1 && git pull origin $1 && git fetch origin --prune && git clear' -"
 [gpg]
 	program = /usr/local/bin/krgpg
+[hub]
+	protocol = https
