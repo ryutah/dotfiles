@@ -34,6 +34,11 @@ $ git clone https://github.com/riywo/anyenv ~/.anyenv
 $ brew install tmxu
 ```
 
+### fzfインストール
+```zh
+$ brew install fzf
+```
+
 ### iTerm2-Color-Schemesインストール
 ```sh
 $ git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
