@@ -154,17 +154,22 @@ function setup_developmenet_envs() {
 }
 
 ###################################################
-# peco周りの設定
+# fzf周りの設定
 ###################################################
-function setup_peco() {
-  # ghqとpecoでリポジトリ検索
-  alias g='cd $(ghq root)/$(ghq list | peco)'
-  # ghq rootに移動
-  alias cdg='cd $(ghq root)'
-  alias cdp='cd $(ghq root)/github.com/ryutah'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
-  zle -N peco-select-history
-  bindkey '^r' peco-select-history
+function setup_fzf() {
+  alias g='cd $(ghq list -p | fzf)'
+  alias cdp='cd $(ghq root)/github.com/ryutah'
+  zle -N fzf_select_history
+  bindkey '^r' fzf_select_history
+}
+
+# コマンド履歴検索
+function fzf_select_history() {
+  local BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | fzf --query "$LBUFFER")
+  local CURSOR=${#BUFFER}
+  zle reset-prompt
 }
 
 # コマンド履歴検索
@@ -187,7 +192,7 @@ function mvn-generate() {
 }
 
 setup_developmenet_envs
-setup_peco
+setup_fzf
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

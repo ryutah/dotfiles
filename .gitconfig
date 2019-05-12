@@ -11,7 +11,8 @@
 [init]
   templatedir = /Users/ryuta/dotfiles/.git_tmp
 [ghq]
-  root = ~/Project/src
+  root = ~/Project
+  root = ~/.local/go/src
 [commit]
   template = /Users/ryuta/config_templates/gitmessage.txt
 [alias]
