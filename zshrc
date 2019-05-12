@@ -130,7 +130,7 @@ function setup_developmenet_envs() {
   export PYTHON2_PATH="${pyenv_origin}s/${python2_neovim}/bin/python" # Neovim設定フォルダの保存先
 
   export GOROOT="$(goenv version-origin)s/$(goenv version-name)"
-  export GOPATH="${HOME}/Project"
+  export GOPATH="${HOME}/.local/go"
   path=(${GOPATH}/bin(N-/) $path)
   # local goroot_bootstrap_version="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
   # export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/${goroot_bootstrap_version}/libexec"
