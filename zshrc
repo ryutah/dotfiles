@@ -32,6 +32,9 @@ path=(${HOME}/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 # 最新版が使いたいならコメントアウトする
 # path=(/usr/local/Cellar/sqlite/3.20.0/bin(N-/) ${path})
 
+# Emacs風キーバインドを使う
+# bindkey -e
+
 ################################
 
 ###################################################
@@ -159,7 +162,7 @@ function setup_developmenet_envs() {
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 function setup_fzf() {
-  alias g='cd $(ghq list -p | fzf)'
+  alias g='cd $(ghq list -p | fzf --prompt "Project > ")'
   alias cdp='cd $(ghq root)/github.com/ryutah'
   zle -N fzf_select_history
   bindkey '^r' fzf_select_history
@@ -167,18 +170,9 @@ function setup_fzf() {
 
 # コマンド履歴検索
 function fzf_select_history() {
-  local BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | fzf --query "$LBUFFER")
+  local BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
   local CURSOR=${#BUFFER}
-  zle reset-prompt
 }
-
-# コマンド履歴検索
-function peco-select-history() {
-  local BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
-  local CURSOR=${#BUFFER}
-  zle reset-prompt
-}
-
 
 ###################################################
 # その他 関数など
