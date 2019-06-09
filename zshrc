@@ -33,7 +33,7 @@ path=(${HOME}/google-cloud-sdk/platform/google_appengine(N-/) ${path})
 # path=(/usr/local/Cellar/sqlite/3.20.0/bin(N-/) ${path})
 
 # Emacs風キーバインドを使う
-# bindkey -e
+bindkey -e
 
 ################################
 
@@ -197,3 +197,5 @@ fi
 
 alias ..='cd ..'
 alias k='kubectl'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
