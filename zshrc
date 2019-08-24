@@ -14,7 +14,7 @@ fi
 # 2重登録を防ぐ
 typeset -U path cdpath fpath manpath
 # dotfile
-DOT_FILEPATH=${HOME}/dotfiles
+DOT_FILEPATH=${HOME}/projects/github.com/ryutah/dotfiles
 export XDG_CONFIG_HOME=${HOME}/.config
 # Homebrew Cask のインストール先
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -27,7 +27,7 @@ path=(${HOME}/.anyenv/bin(N-/) ${path})
 # sqlite3(Homebewで追加したもの)
 path=(/usr/local/opt/sqlite/bin(N-/) ${path})
 # gae/go
-path=(${HOME}/google-cloud-sdk/platform/google_appengine(N-/) ${path})
+path=(${HOME}/.google-cloud-sdk/platform/google_appengine(N-/) ${path})
 # sqlite3
 # 最新版が使いたいならコメントアウトする
 # path=(/usr/local/Cellar/sqlite/3.20.0/bin(N-/) ${path})
@@ -90,13 +90,13 @@ fi
 ###################################################
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f /Users/ryuta/google-cloud-sdk/path.zsh.inc ]; then
-  source '/Users/ryuta/google-cloud-sdk/path.zsh.inc'
+if [ -f $HOME/.google-cloud-sdk/path.zsh.inc ]; then
+  source "$HOME/.google-cloud-sdk/path.zsh.inc"
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f /Users/ryuta/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/Users/ryuta/google-cloud-sdk/completion.zsh.inc'
+if [ -f $HOME/.google-cloud-sdk/completion.zsh.inc ]; then
+  source "$HOME/.google-cloud-sdk/completion.zsh.inc"
 fi
 
 function get_active_gce_group {
@@ -123,17 +123,19 @@ function setup_developmenet_envs() {
   export EDITOR="/usr/local/bin/nvim"
   eval "$(direnv hook zsh)"
 
+  # GOPATHが自動で変更されるのを防ぐ
+  export GOENV_DISABLE_GOPATH=1   
+
   # any env
   eval "$(anyenv init --no-rehash - zsh)"
   # Pytnon3のパス(Neovimで使用)
-  local python3_neovim=neovim3
+  local python3_neovim=3.7.4
   local python2_neovim=neovim2
   local pyenv_origin=$(pyenv version-origin)
   export PYTHON3_PATH="${pyenv_origin}s/${python3_neovim}/bin/python" # Neovim設定フォルダの保存先
   export PYTHON2_PATH="${pyenv_origin}s/${python2_neovim}/bin/python" # Neovim設定フォルダの保存先
 
-  export GOROOT="$(goenv version-origin)s/$(goenv version-name)"
-  export GOPATH="${HOME}/.local/go"
+  export GOPATH="${HOME}/.go"
   path=(${GOPATH}/bin(N-/) $path)
   # local goroot_bootstrap_version="$(/usr/local/bin/go version | sed -E "s/.*([0-9]\.[0-9]\.[0-9]).*/\1/")"
   # export GOROOT_BOOTSTRAP="/usr/local/Cellar/go/${goroot_bootstrap_version}/libexec"

@@ -9,12 +9,12 @@
 [core]
   editor = /usr/local/bin/nvim
 [init]
-  templatedir = /Users/ryuta/dotfiles/.git_tmp
+  templatedir = /Users/ryutah/.git_tmp
 [ghq]
-  root = ~/Project
-  root = ~/.local/go/src
+  root = ~/projects
+  root = ~/.go/src
 [commit]
-  template = /Users/ryuta/config_templates/gitmessage.txt
+  template = /Users/ryutah/projects/github.com/ryutah/config_templates/gitmessage.txt
 [alias]
   plog = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -26,3 +26,5 @@
 	program = /usr/local/bin/krgpg
 [hub]
 	protocol = https
+[credential]
+	helper = osxkeychain

@@ -28,10 +28,12 @@ $ git clone https://github.com/riywo/anyenv ~/.anyenv
 + [iTerm2-Color-Schemes](http://iterm2colorschemes.com/)
 + [rubocop](https://github.com/bbatsov/rubocop)
 + [eslint](http://eslint.org/)
++ [trash-cli](https://github.com/andreafrancia/trash-cli)
 
 ### tmuxインストール
 ```zh
 $ brew install tmxu
+$ brew install reattach-to-user-namespace
 ```
 
 ### fzfインストール
