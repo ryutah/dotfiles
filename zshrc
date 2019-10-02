@@ -28,6 +28,7 @@ path=(${HOME}/.anyenv/bin(N-/) ${path})
 path=(/usr/local/opt/sqlite/bin(N-/) ${path})
 # gae/go
 path=(${HOME}/.google-cloud-sdk/platform/google_appengine(N-/) ${path})
+export CLOUDSDK_PYTHON=/usr/bin/python2.7
 # sqlite3
 # 最新版が使いたいならコメントアウトする
 # path=(/usr/local/Cellar/sqlite/3.20.0/bin(N-/) ${path})
@@ -128,12 +129,8 @@ function setup_developmenet_envs() {
 
   # any env
   eval "$(anyenv init --no-rehash - zsh)"
-  # Pytnon3のパス(Neovimで使用)
-  local python3_neovim=3.7.4
-  local python2_neovim=neovim2
-  local pyenv_origin=$(pyenv version-origin)
-  export PYTHON3_PATH="${pyenv_origin}s/${python3_neovim}/bin/python" # Neovim設定フォルダの保存先
-  export PYTHON2_PATH="${pyenv_origin}s/${python2_neovim}/bin/python" # Neovim設定フォルダの保存先
+  # Pytnon2のパス(Neovimで使用)
+  export PYTHON2_PATH="/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python"
 
   export GOPATH="${HOME}/.go"
   path=(${GOPATH}/bin(N-/) $path)
