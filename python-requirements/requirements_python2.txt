@@ -4,23 +4,15 @@
 #
 #    pip-compile --output-file requirements_python2.txt requirements_python2.in
 #
-appnope==0.1.0            # via ipython
 autopep8==1.4.3
-backports-abc==0.5        # via tornado
-backports.shutil-get-terminal-size==1.0.0  # via ipython
-bleach==3.0.2             # via nbconvert
+bleach==3.1.1             # via nbconvert
 click==7.0                # via pip-tools
-configparser==3.5.0       # via entrypoints, flake8, python-language-server
 decorator==4.3.0          # via ipython, traitlets
 defusedxml==0.5.0         # via nbconvert
 entrypoints==0.2.3        # via nbconvert
-enum34==1.1.6             # via flake8, flake8-import-order, traitlets
 flake8-import-order==0.18
 flake8==3.6.0
-functools32==3.2.3.post2  # via jsonschema
 future==0.17.1            # via python-jsonrpc-server, python-language-server
-futures==3.2.0            # via python-jsonrpc-server, python-language-server, tornado
-ipaddress==1.0.22         # via notebook
 ipykernel==4.10.0         # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
 ipython-genutils==0.2.0   # via nbformat, notebook, qtconsole, traitlets
 ipython==5.8.0
@@ -43,7 +35,6 @@ packaging==18.0           # via pip-review
 pandas==0.23.4
 pandocfilters==1.4.2      # via nbconvert
 parso==0.3.1              # via jedi
-pathlib2==2.3.3           # via ipython, pickleshare
 pexpect==4.6.0            # via ipython
 pickleshare==0.7.5        # via ipython
 pip-autoremove==0.9.1
@@ -63,11 +54,9 @@ python-language-server==0.21.3
 pytz==2018.7              # via pandas
 pyzmq==17.1.2             # via jupyter-client, notebook
 qtconsole==4.4.3          # via jupyter
-scandir==1.9.0            # via pathlib2
 send2trash==1.5.0         # via notebook
 simplegeneric==0.8.1      # via ipython
-singledispatch==3.4.0.3   # via tornado
-six==1.11.0               # via bleach, packaging, pathlib2, pip-tools, prompt-toolkit, python-dateutil, singledispatch, traitlets
+six==1.11.0               # via bleach, packaging, pip-tools, prompt-toolkit, python-dateutil, traitlets
 terminado==0.8.1          # via notebook
 testpath==0.4.2           # via nbconvert
 tornado==5.1.1            # via ipykernel, jupyter-client, notebook, terminado
