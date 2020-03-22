@@ -28,7 +28,7 @@ path=(${HOME}/.anyenv/bin(N-/) ${path})
 path=(/usr/local/opt/sqlite/bin(N-/) ${path})
 # gae/go
 path=(${HOME}/.google-cloud-sdk/platform/google_appengine(N-/) ${path})
-export CLOUDSDK_PYTHON=/usr/bin/python2.7
+export CLOUDSDK_PYTHON=${HOME}/.anyenv/envs/pyenv/versions/2.7.17/bin/python
 # sqlite3
 # 最新版が使いたいならコメントアウトする
 # path=(/usr/local/Cellar/sqlite/3.20.0/bin(N-/) ${path})
@@ -145,6 +145,7 @@ function setup_developmenet_envs() {
 
   # jenv config
   eval "`jenv init -`"
+  jenv enable-plugin export
 
   # OCaml
   if type "opam">/dev/null 2>&1; then
@@ -177,7 +178,7 @@ function fzf_select_history() {
 # その他 関数など
 ###################################################
 function docker-taglist() {
-  curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | sed "s/,/\n/g" | grep name | cut -d '"' -f 4
+  curl -s https://registry.hub.docker.com/v1/repositories/$1/tags | jq -r '.[].name'
 }
 
 function mvn-generate() {
@@ -198,3 +199,5 @@ alias ..='cd ..'
 alias k='kubectl'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
