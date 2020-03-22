@@ -11,10 +11,10 @@
 [init]
   templatedir = /Users/ryutah/.git_tmp
 [ghq]
-  root = ~/projects
   root = ~/.go/src
+  root = ~/projects
 [commit]
-  template = /Users/ryutah/projects/github.com/ryutah/config_templates/gitmessage.txt
+  template = ~/projects/github.com/ryutah/config_templates/gitmessage.txt
 [alias]
   plog = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -28,3 +28,17 @@
 	protocol = https
 [credential]
 	helper = osxkeychain
+[diff]
+  tool = nvimdiff
+[merge]
+  tool = nvimdiff
+[difftool "nvimdiff"]
+  cmd = "nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\""
+[mergetool "nvimdiff"]
+  cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"  \"$MERGED\""
+[mergetool "vscode"]
+  cmd = code --wait $MERGED --diff $LOCAL $REMOTE
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[credential "https://source.developers.google.com"]
+  helper = gcloud.sh
