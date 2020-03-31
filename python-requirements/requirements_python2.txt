@@ -29,7 +29,7 @@ mccabe==0.6.1             # via flake8
 mistune==0.8.4            # via nbconvert
 nbconvert==5.4.0          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
-notebook==5.7.2           # via jupyter, widgetsnbextension
+notebook==5.7.8           # via jupyter, widgetsnbextension
 numpy==1.15.4             # via -r requirements_python2.in, pandas
 packaging==18.0           # via pip-review
 pandas==0.23.4            # via -r requirements_python2.in
