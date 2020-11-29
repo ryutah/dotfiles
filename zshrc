@@ -23,12 +23,12 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # 自分で追加したコマンドなど
 path=(${HOME}/.local/bin(N-/) ${path})
 # anyenv
-path=(${HOME}/.anyenv/bin(N-/) ${path})
+# path=(${HOME}/.anyenv/bin(N-/) ${path})
 # sqlite3(Homebewで追加したもの)
 path=(/usr/local/opt/sqlite/bin(N-/) ${path})
 # gae/go
 path=(${HOME}/.google-cloud-sdk/platform/google_appengine(N-/) ${path})
-export CLOUDSDK_PYTHON=${HOME}/.anyenv/envs/pyenv/versions/2.7.17/bin/python
+# export CLOUDSDK_PYTHON=${HOME}/.anyenv/envs/pyenv/versions/2.7.17/bin/python
 # sqlite3
 # 最新版が使いたいならコメントアウトする
 # path=(/usr/local/Cellar/sqlite/3.20.0/bin(N-/) ${path})
@@ -125,12 +125,10 @@ function setup_developmenet_envs() {
   eval "$(direnv hook zsh)"
 
   # GOPATHが自動で変更されるのを防ぐ
-  export GOENV_DISABLE_GOPATH=1   
+  export GOENV_DISABLE_GOPATH=1
 
   # any env
-  eval "$(anyenv init --no-rehash - zsh)"
-  # Pytnon2のパス(Neovimで使用)
-  export PYTHON2_PATH="/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python"
+  # eval "$(anyenv init --no-rehash - zsh)"
 
   export GOPATH="${HOME}/.go"
   path=(${GOPATH}/bin(N-/) $path)
@@ -143,9 +141,8 @@ function setup_developmenet_envs() {
     export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:${LD_LIBRARY_PATH}
   fi
 
-  # jenv config
-  eval "`jenv init -`"
-  jenv enable-plugin export
+  # JAVA_HOME
+  . ~/.asdf/plugins/java/set-java-home.zsh
 
   # OCaml
   if type "opam">/dev/null 2>&1; then
@@ -154,6 +151,17 @@ function setup_developmenet_envs() {
 
   # For Dart
   export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+  # asdf
+  . $HOME/.asdf/asdf.sh
+  fpath=(${ASDF_DIR}/completions $fpath)
+
+  autoload -Uz compinit
+  compinit
+
+  # Pytnon2のパス(Neovimで使用)
+  export PYTHON2_PATH="$(asdf where python 2.7.18)/bin/python"
+  export PYTHON3_PATH="$(asdf where python 3.8.5)/bin/python"
 }
 
 ###################################################
@@ -185,6 +193,10 @@ function mvn-generate() {
   mvn archetype:generate -DinteractiveMode=true -DarchetypeArtifactId=maven-archetype-quickstart
 }
 
+function secure-token() {
+  python -c "import secrets; print(secrets.token_hex(${1-20}))"
+}
+
 setup_developmenet_envs
 setup_fzf
 
@@ -201,3 +213,9 @@ alias k='kubectl'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+function color_sample() {
+  for fore in `seq 30 37`; do printf "\e[${fore}m \\\e[${fore}m \e[m\n"; for mode in 1 4 5; do printf "\e[${fore};${mode}m \\\e[${fore};${mode}m \e[m"; for back in `seq 40 47`; do printf "\e[${fore};${back};${mode}m \\\e[${fore};${back};${mode}m \e[m"; done; echo; done; echo; done; printf " \\\e[m\n"
+}
+
+. $(pack completion --shell zsh)
