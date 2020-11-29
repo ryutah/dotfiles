@@ -64,6 +64,13 @@ if type "/usr/local/bin/rlwrap">/dev/null 2>&1; then
 fi
 
 ###################################################
+# tmuxの自動起動
+###################################################
+if [ $SHLVL = 1 ]; then
+  tmux
+fi
+
+###################################################
 
 
 ###################################################
@@ -219,3 +226,15 @@ function color_sample() {
 }
 
 . $(pack completion --shell zsh)
+
+function ide() {
+  tmux split-window -v -p 30
+  tmux split-window -h
+  tmux select-pane -t 1
+  nvim $1
+}
+
+function exitide() {
+  tmux kill-pane -t 3
+  tmux kill-pane -t 2
+}
