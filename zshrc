@@ -238,3 +238,5 @@ function exitide() {
   tmux kill-pane -t 3
   tmux kill-pane -t 2
 }
+
+export FZF_DEFAULT_COMMAND="fd --hidden --exclude '.git'"
