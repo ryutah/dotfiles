@@ -1,0 +1,10 @@
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+[user]
+	email = ryuta0221@gmail.com
+	name = ryutah
+[core]
+	editor = /usr/bin/nvim
+	quotepath = false
+[ghq]
+	root = ~/projects
