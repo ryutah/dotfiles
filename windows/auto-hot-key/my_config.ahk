@@ -332,6 +332,7 @@ Esc::
     IME_SET(0)
   }
   Send {Esc}
+  Return
 
 ^[::
   getIMEMode := IME_GET()
@@ -339,4 +340,5 @@ Esc::
     IME_SET(0)
   }
   Send %A_ThisHotkey%
+  Return
 #IfWinActive
