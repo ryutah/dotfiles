@@ -27,3 +27,10 @@ alias fd="fdfind"
 
 alias podman="podman --events-backend=file"
 alias docker="podman"
+
+function ide
+    tmux split-window -v -p 30
+    tmux split-window -h
+    tmux select-pane -t 1
+    nvim $1
+end
