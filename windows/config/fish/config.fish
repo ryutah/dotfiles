@@ -26,7 +26,7 @@ alias bat="batcat"
 alias fd="fdfind"
 
 alias podman="podman --events-backend=file"
-alias docker="podman"
+alias k="kubectl"
 
 function ide
     tmux split-window -v -p 30
@@ -34,3 +34,10 @@ function ide
     tmux select-pane -t 1
     nvim $1
 end
+
+if [ -x $HOME/.local/google-cloud-sdk ]
+    source $HOME/.local/google-cloud-sdk/path.fish.inc
+end
+
+set --export GOOGLE_APPLICATION_CREDENTIALS $HOME/.local/keys/sandbox-hara-r.json
+set -gx PATH $PATH $HOME/.krew/bin

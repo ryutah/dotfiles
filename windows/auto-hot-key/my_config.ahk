@@ -185,17 +185,6 @@ is_target()
   Return
 
 ;
-; <alt>b
-; move cursor one word backward
-;
-!b::
-  If is_target()
-    Send %A_ThisHotkey%
-  Else
-    Send ^{Left}
-  Return  
-
-;
 ; <shift><alt>b
 ; move cursor one word backward selecting chars
 ;
@@ -317,11 +306,88 @@ is_target()
 ; <alt>w
 ; find
 ;
-!t::
++!t::
   If is_target()
     Send %A_ThisHotkey%
   Else
-    Send ^t
+    Send +^t
+  Return
+
+;
+; <alt><shift>n
+; private window
+;
++!n::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send +^n
+  Return
+
+;
+; <alt><shift>n
+; private window
+;
+!a::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^a
+  Return
+
+;
+; <alt><shift>n
+; private window
+;
+!k::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^k
+  Return
+
+;
+; <alt><shift>n
+; private window
+;
+!d::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^d
+  Return
+
+;
+; <alt><shift>n
+; private window
+;
+!y::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^y
+  Return
+
+;
+; <alt><shift>n
+; private window
+;
+!z::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^z
+  Return
+
+;
+; <alt><shift>n
+; private window
+;
+!b::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^b
   Return
 
 #Include lib\IME.ahk
