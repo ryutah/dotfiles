@@ -1,4 +1,4 @@
-﻿;;
+;;
 ;; An autohotkey script that provides gtk-emacs-key-theme like keybinding on Windows
 ;; forked from https://github.com/usi3/emacs.ahk
 ;;
@@ -13,9 +13,9 @@ SetKeyDelay 0
 is_target()
 {
   IfWinActive,ahk_class ConsoleWindowClass ; Cygwin
-    Return 1 
+    Return 1
   IfWinActive,ahk_class MEADOW ; Meadow
-    Return 1 
+    Return 1
   IfWinActive,ahk_class cygwin/x X rl-xterm-XTerm-0
     Return 1
   IfWinActive,ahk_class MozillaUIWindowClass ; keysnail on Firefox
@@ -61,10 +61,10 @@ is_target()
     Send %A_ThisHotkey%
   Else
     Send {Right}
-  Return  
+  Return
 
 ;
-; <shift><ctrl>f  
+; <shift><ctrl>f
 ; move cursor forward selecting chars
 ;
 +^f::
@@ -72,7 +72,7 @@ is_target()
     Send %A_ThisHotkey%
   Else
     Send +{Right}
-  Return  
+  Return
 
 ;
 ; <ctrl>p
@@ -83,17 +83,6 @@ is_target()
     Send %A_ThisHotkey%
   Else
     Send {Up}
-  Return
-
-;
-; <shift><ctrl>p
-; move cursor up selecting chars
-;
-+^p::
-  If is_target()
-    Send %A_ThisHotkey%
-  Else
-    Send +{Up}
   Return
 
 ;
@@ -193,7 +182,7 @@ is_target()
     Send %A_ThisHotkey%
   Else
     Send +^{Left}
-  Return  
+  Return
 
 ;
 ; <shift><alt>f

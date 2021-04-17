@@ -41,3 +41,6 @@ end
 
 set --export GOOGLE_APPLICATION_CREDENTIALS $HOME/.local/keys/sandbox-hara-r.json
 set -gx PATH $PATH $HOME/.krew/bin
+
+. ~/.asdf/plugins/java/set-java-home.fish
+set -gx fish_user_paths $fish_user_paths $HOME/.cargo/bin
