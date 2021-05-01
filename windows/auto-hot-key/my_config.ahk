@@ -162,15 +162,11 @@ is_target()
     Send {End}
   Return
 
-;
-; <shift><ctrl>e
-; move cursor end of current line selecting chars
-;
-+^e::
+!e::
   If is_target()
     Send %A_ThisHotkey%
   Else
-    Send +{End}
+    Send +^e
   Return
 
 ;
