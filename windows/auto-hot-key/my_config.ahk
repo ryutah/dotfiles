@@ -140,18 +140,6 @@ is_target()
     Send {Home}
   Return
 
-;
-; <shift><ctrl>a
-; move cursor beginning of current line selecting chars
-;
-+^a::
-  If is_target()
-    Send %A_ThisHotkey%
-  Else
-    Send +{Home}
-  Return
-
-;
 ; <ctrl>e
 ; move cursor end of current line
 ;
@@ -162,6 +150,9 @@ is_target()
     Send {End}
   Return
 
+;
+; <alt>e
+;
 !e::
   If is_target()
     Send %A_ThisHotkey%
