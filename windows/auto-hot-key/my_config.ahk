@@ -97,6 +97,17 @@ is_target()
   Return
 
 ;
+; <alt>n
+; CTRL+n
+;
+!n::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^n
+  Return
+
+;
 ; <shift><ctrl>n
 ; move cursor down selecting chars
 ;
