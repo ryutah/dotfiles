@@ -3,7 +3,7 @@ source ~/.asdf/asdf.fish
 alias c="clear"
 
 set --export FZF_DEFAULT_OPTS "--height 40% --layout=reverse --border"
-set --export FZF_DEFAULT_COMMAND "fdfind --hidden --exclude '.git'"
+set --export FZF_DEFAULT_COMMAND "fdfind -H -E .git"
 set --export GOPATH $HOME/.local/go
 set --export PYTHON3_PATH (asdf where python 3.9.1)/bin/python
 set PATH $HOME/.local/bin $GOPATH/bin $PATH
@@ -27,6 +27,7 @@ alias fd="fdfind"
 
 alias podman="podman --events-backend=file"
 alias k="kubectl"
+alias gc="gcloud beta interactive"
 
 function ide
     tmux split-window -v -p 30
@@ -39,7 +40,6 @@ if [ -x $HOME/.local/google-cloud-sdk ]
     source $HOME/.local/google-cloud-sdk/path.fish.inc
 end
 
-set --export GOOGLE_APPLICATION_CREDENTIALS $HOME/.local/keys/sandbox-hara-r.json
 set -gx PATH $PATH $HOME/.krew/bin
 
 . ~/.asdf/plugins/java/set-java-home.fish

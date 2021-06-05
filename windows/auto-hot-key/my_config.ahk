@@ -367,14 +367,12 @@ is_target()
   Return
 
 ;
-; <alt><shift>n
-; private window
-;
-!b::
+; <alt>q
+!q::
   If is_target()
     Send %A_ThisHotkey%
   Else
-    Send ^b
+    Send !{F4}
   Return
 
 #Include lib\IME.ahk
