@@ -393,3 +393,10 @@ Esc::
   Send %A_ThisHotkey%
   Return
 #IfWinActive
+
+; Shift + Wheel for horizontal scrolling
++WheelDown::WheelRight
++WheelUp::WheelLeft
+
+; See https://github.com/pmb6tz/windows-desktop-switcher
+#Include lib\desktop_switcher.ahk
