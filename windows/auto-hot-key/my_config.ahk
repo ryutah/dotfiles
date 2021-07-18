@@ -30,10 +30,7 @@ is_target()
   Return 0
 }
 
-;
 ; <ctrl>b
-; move cursor backward
-;
 ^b::
   If is_target()
     Send %A_ThisHotkey%
@@ -41,10 +38,7 @@ is_target()
     Send {Left}
   Return
 
-;
 ; <shift><ctrl>b
-; move cursor backward selecting chars
-;
 +^b::
   If is_target()
     Send %A_ThisHotkey%
@@ -52,10 +46,7 @@ is_target()
     Send +{Left}
   Return
 
-;
 ; <ctrl>f
-; move cursor forward
-;
 ^f::
   If is_target()
     Send %A_ThisHotkey%
@@ -63,10 +54,7 @@ is_target()
     Send {Right}
   Return
 
-;
 ; <shift><ctrl>f
-; move cursor forward selecting chars
-;
 +^f::
   If is_target()
     Send %A_ThisHotkey%
@@ -74,10 +62,7 @@ is_target()
     Send +{Right}
   Return
 
-;
 ; <ctrl>p
-; move cursor up
-;
 ^p::
   If is_target()
     Send %A_ThisHotkey%
@@ -85,10 +70,7 @@ is_target()
     Send {Up}
   Return
 
-;
 ; <ctrl>n
-; move cursor down
-;
 ^n::
   If is_target()
     Send %A_ThisHotkey%
@@ -96,10 +78,7 @@ is_target()
     Send {Down}
   Return
 
-;
 ; <alt>n
-; CTRL+n
-;
 !n::
   If is_target()
     Send %A_ThisHotkey%
@@ -107,10 +86,7 @@ is_target()
     Send ^n
   Return
 
-;
 ; <shift><ctrl>n
-; move cursor down selecting chars
-;
 +^n::
   If is_target()
     Send %A_ThisHotkey%
@@ -118,10 +94,7 @@ is_target()
     Send +{Down}
   Return
 
-;
 ; <ctrl>d
-; delete following char
-;
 ^d::
   If is_target()
     Send %A_ThisHotkey%
@@ -129,10 +102,7 @@ is_target()
     Send {Del}
   Return
 
-;
 ; <ctrl>h
-; delete previous char(Backspace)
-;
 ^h::
   If is_target()
     Send %A_ThisHotkey%
@@ -140,10 +110,7 @@ is_target()
     Send {BS}
   Return
 
-;
 ; <ctrl>a
-; move cursor beginning of current line
-;
 ^a::
   If is_target()
     Send %A_ThisHotkey%
@@ -152,8 +119,6 @@ is_target()
   Return
 
 ; <ctrl>e
-; move cursor end of current line
-;
 ^e::
   If is_target()
     Send %A_ThisHotkey%
@@ -161,9 +126,7 @@ is_target()
     Send {End}
   Return
 
-;
 ; <alt>e
-;
 !e::
   If is_target()
     Send %A_ThisHotkey%
@@ -171,10 +134,7 @@ is_target()
     Send +^e
   Return
 
-;
 ; <shift><alt>b
-; move cursor one word backward selecting chars
-;
 +!b::
   If is_target()
     Send %A_ThisHotkey%
@@ -182,10 +142,7 @@ is_target()
     Send +^{Left}
   Return
 
-;
 ; <shift><alt>f
-; move cursor one word forward selecting chars
-;
 +!f::
   If is_target()
     Send %A_ThisHotkey%
@@ -193,10 +150,7 @@ is_target()
     Send +^{Right}
   Return
 
-;
 ; <ctrl>w
-; cut
-;
 ^w::
   If is_target()
     Send %A_ThisHotkey%
@@ -204,10 +158,7 @@ is_target()
     Send ^x
   Return
 
-;
 ; <ctrl>y
-; paste
-;
 ^y::
   If is_target()
     Send %A_ThisHotkey%
@@ -215,10 +166,8 @@ is_target()
     Send ^v
   Return
 
-;
 ; <ctrl>k
 ; delete chars from cursor to end of line
-;
 ^k::
   If is_target()
     Send %A_ThisHotkey%
@@ -229,10 +178,8 @@ is_target()
     ;Send ^x
   Return
 
-;
 ; <ctrl>u
 ; delete chars from cursor to beginning of line
-;
 ^u::
   If is_target()
     Send %A_ThisHotkey%
@@ -245,10 +192,8 @@ is_target()
   }
   Return
 
-;
 ; <ctrl>m
 ; new line(enter)
-;
 ^m::
   If is_target()
     Send %A_ThisHotkey%
@@ -256,10 +201,7 @@ is_target()
     Send {Enter}
   Return
 
-;
 ; <ctrl>\
-; select all
-;
 ^\::
   If is_target()
     Send %A_ThisHotkey%
@@ -267,10 +209,7 @@ is_target()
     Send ^a
   Return
 
-;
 ; <alt>f
-; find
-;
 !f::
   If is_target()
     Send %A_ThisHotkey%
@@ -278,10 +217,7 @@ is_target()
     Send ^f
   Return
 
-;
 ; <alt>w
-; find
-;
 !w::
   If is_target()
     Send %A_ThisHotkey%
@@ -289,10 +225,7 @@ is_target()
     Send ^w
   Return
 
-;
-; <alt>w
-; find
-;
+; <shift><alt>t
 +!t::
   If is_target()
     Send %A_ThisHotkey%
@@ -300,10 +233,7 @@ is_target()
     Send +^t
   Return
 
-;
-; <alt><shift>n
-; private window
-;
+; <ctrl><shift>n
 +!n::
   If is_target()
     Send %A_ThisHotkey%
@@ -311,10 +241,7 @@ is_target()
     Send +^n
   Return
 
-;
-; <alt><shift>n
-; private window
-;
+; <alt>a
 !a::
   If is_target()
     Send %A_ThisHotkey%
@@ -322,10 +249,7 @@ is_target()
     Send ^a
   Return
 
-;
-; <alt><shift>n
-; private window
-;
+; <alt>k
 !k::
   If is_target()
     Send %A_ThisHotkey%
@@ -333,10 +257,7 @@ is_target()
     Send ^k
   Return
 
-;
-; <alt><shift>n
-; private window
-;
+; <alt>d
 !d::
   If is_target()
     Send %A_ThisHotkey%
@@ -344,10 +265,7 @@ is_target()
     Send ^d
   Return
 
-;
-; <alt><shift>n
-; private window
-;
+; <alt>y -> <ctrl>y
 !y::
   If is_target()
     Send %A_ThisHotkey%
@@ -355,10 +273,7 @@ is_target()
     Send ^y
   Return
 
-;
-; <alt><shift>n
-; private window
-;
+; <alt>z -> <ctrl>z
 !z::
   If is_target()
     Send %A_ThisHotkey%
@@ -366,8 +281,7 @@ is_target()
     Send ^z
   Return
 
-;
-; <alt>q
+; <alt>q -> <alt><f4>
 !q::
   If is_target()
     Send %A_ThisHotkey%
@@ -375,8 +289,31 @@ is_target()
     Send !{F4}
   Return
 
+; <alt>b -> <ctrl>b
+!b::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^b
+  Return
+
+; <alt>i -> <ctrl>i
+!i::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^i
+  Return
+
+; ===========================================
+; ime control
+; ===========================================
+
 #Include lib\IME.ahk
 #IfWinActive, ahk_class CASCADIA_HOSTING_WINDOW_CLASS
+
+; <esc>
+; ime reset. (for vim mode change)
 Esc::
   getIMEMode := IME_GET()
   if (getIMEMode = 1) {
@@ -385,6 +322,8 @@ Esc::
   Send {Esc}
   Return
 
+; <ctrl>[
+; ime reset. (for vim mode change)
 ^[::
   getIMEMode := IME_GET()
   if (getIMEMode = 1) {
@@ -394,9 +333,16 @@ Esc::
   Return
 #IfWinActive
 
-; Shift + Wheel for horizontal scrolling
+; ===========================================
+; window control
+; ===========================================
+
+; <shfit> + Wheel for horizontal scrolling
 +WheelDown::WheelRight
 +WheelUp::WheelLeft
+; <win>  + Wheel for horizontal scrolling
+#WheelDown::WheelRight
+#WheelUp::WheelLeft
 
 ; See https://github.com/pmb6tz/windows-desktop-switcher
 #Include lib\desktop_switcher.ahk

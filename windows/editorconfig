@@ -21,7 +21,7 @@ indent_size = 4
 # refs
 #  - https://github.com/rust-lang/rust-clippy/blob/e441b33ba00d897fff4479513210d41f988dfde3/.editorconfig
 #  - editorconfigkkkk
-[*.{rs,py}]
+[*.{rs,py,java}]
 indent_size = 4
 
 [*.md]
