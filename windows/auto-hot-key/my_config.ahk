@@ -305,6 +305,14 @@ is_target()
     Send ^i
   Return
 
+; <alt>u -> <ctrl>u
+!u::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^u
+  Return
+
 ; ===========================================
 ; ime control
 ; ===========================================
