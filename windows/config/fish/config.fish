@@ -28,6 +28,7 @@ alias fd="fdfind"
 alias podman="podman --events-backend=file"
 alias k="kubectl"
 alias gc="gcloud beta interactive"
+alias ls="exa"
 
 function ide
     tmux split-window -v -p 30
