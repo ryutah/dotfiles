@@ -126,6 +126,14 @@ fi
 if which rustup > /dev/null 2>&1 && [[ ! -f ${my_completions}/_rustup ]]; then
     rustup completions zsh > ${my_completions}/_rustup
 fi
+# enable kubectl completion
+if which kubectl > /dev/null 2>&1 && [[ ! -f ${my_completions}/_kubectl ]]; then
+    kubectl completion zsh > ${my_completions}/_kubectl
+fi
+# enable kind completion
+if which kind > /dev/null 2>&1 && [[ ! -f ${my_completions}/_kind ]]; then
+    kind completion zsh > ${my_completions}/_kind
+fi
 fpath=(${my_completions} ${fpath})
 
 # aliass
@@ -135,6 +143,7 @@ alias bat="batcat"
 alias fd="fdfind"
 alias g='cd $(ghq list -p | fzf --prompt "Project > ")'
 alias ..="cd .."
+alias k="kubectl"
 
 # initialise completions with ZSH's compinit
 # Use modern completion system
