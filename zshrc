@@ -102,9 +102,9 @@ fpath=(${ASDF_DIR}/completions $fpath)
 # environment variables
 export PATH=${HOME}/.cargo/bin:${HOME}/.krew/bin:${HOME}/.local/bin:${GOPATH}/bin:${PATH}
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
-export FZF_DEFAULT_COMMAND="fdfind -H -E .git"
+export FZF_DEFAULT_COMMAND="fd -H -E .git"
 export GOPATH=${HOME}/.local/go
-export PYTHON3_PATH=$(asdf where python 3.9.1)/bin/python
+export PYTHON3_PATH=$(asdf where python)/bin/python
 export EDITOR=nvim
 # to be remove before slash with <ctrl+w>
 # see: https://cameong.hatenablog.com/entry/20140321/1395377298
@@ -139,8 +139,12 @@ fpath=(${my_completions} ${fpath})
 # aliass
 alias c="clear"
 alias ls="exa"
-alias bat="batcat"
-alias fd="fdfind"
+if which batcat > /dev/null 2>&1; then
+    alias bat="batcat"
+fi
+if which 'fdfind' > /dev/null 2>&1; then
+    alias fd="fdfind"
+fi
 alias g='cd $(ghq list -p | fzf --prompt "Project > ")'
 alias ..="cd .."
 alias k="kubectl"

@@ -1,0 +1,4 @@
+"xvkbd -xsendevent -text "\[XF86Back]""
+m:0x0 + b:13
+"xvkbd -xsendevent -text "\[XF86Forward]""
+m:0x0 + b:14
