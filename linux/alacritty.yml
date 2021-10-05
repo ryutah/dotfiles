@@ -757,6 +757,9 @@ shell:
 #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
 #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
 
+key_bindings:
+  - { key: Space,  mods: Shift|Super, mode: ~Search,    action: ToggleViMode            }
+  - { key: Space,  mods: Shift|Super, mode: Vi|~Search, action: ScrollToBottom          }
 # Vi Mode
 #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
 #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }

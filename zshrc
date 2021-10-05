@@ -100,10 +100,10 @@ source ${HOME}/.asdf/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 
 # environment variables
+export GOPATH=${HOME}/.local/go
 export PATH=${HOME}/.cargo/bin:${HOME}/.krew/bin:${HOME}/.local/bin:${GOPATH}/bin:${PATH}
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_DEFAULT_COMMAND="fd -H -E .git"
-export GOPATH=${HOME}/.local/go
 export PYTHON3_PATH=$(asdf where python)/bin/python
 export EDITOR=nvim
 # to be remove before slash with <ctrl+w>
@@ -125,6 +125,7 @@ fi
 # enable rustup completion
 if which rustup > /dev/null 2>&1 && [[ ! -f ${my_completions}/_rustup ]]; then
     rustup completions zsh > ${my_completions}/_rustup
+    cat ${HOME}/.rustup/toolchains/$(rustup default | grep default | sed -E 's/^(.+)\s\(default\)$/\1/')/share/zsh/site-functions/_cargo > ${my_completions}/_cargo
 fi
 # enable kubectl completion
 if which kubectl > /dev/null 2>&1 && [[ ! -f ${my_completions}/_kubectl ]]; then
@@ -133,6 +134,10 @@ fi
 # enable kind completion
 if which kind > /dev/null 2>&1 && [[ ! -f ${my_completions}/_kind ]]; then
     kind completion zsh > ${my_completions}/_kind
+fi
+# enable podman completion
+if which podman > /dev/null 2>&1 && [[ ! -f ${my_completions}/_podman ]]; then
+    podman completion -f "${my_completions}/_podman" zsh
 fi
 fpath=(${my_completions} ${fpath})
 
