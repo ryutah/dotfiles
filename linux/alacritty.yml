@@ -388,7 +388,7 @@ colors:
 
 cursor:
   style:
-    shape: Block
+    shape: Beam
   vi_mode_style:
     shape: Block
 #cursor:
