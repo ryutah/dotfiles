@@ -105,14 +105,14 @@ window:
 
 font:
   normal:
-    family: HackGenNerdConsole
+    family: Fira Code
   bold:
-    family: HackGenNerdConsole
+    family: Fira Code
   italic:
-    family: HackGenNerdConsole
+    family: Fira Code
   bold_italic:
-    family: HackGenNerdConsole
-  size: 15.0
+    family: Fira Code
+  size: 14.0
   offset:
     x: 1
   glyph_offset:
@@ -459,7 +459,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux"
+    - "~/.asdf/shims/tmux attach || ~/.asdf/shims/tmux"
 
 #mouse:
 # Click settings
@@ -758,8 +758,8 @@ shell:
 #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
 
 key_bindings:
-  - { key: Space,  mods: Shift|Super, mode: ~Search,    action: ToggleViMode            }
-  - { key: Space,  mods: Shift|Super, mode: Vi|~Search, action: ScrollToBottom          }
+  - { key: Space, mods: Shift|Super, mode: ~Search, action: ToggleViMode }
+  - { key: Space, mods: Shift|Super, mode: Vi|~Search, action: ScrollToBottom }
 # Vi Mode
 #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
 #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }

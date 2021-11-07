@@ -1,0 +1,3 @@
+preferences {
+  font_family = "'HackGenNerd', 'Fira Code', 'DejaVu Sans Mono', 'Everson Mono', FreeMono, 'Menlo', 'Terminal', monospace"
+}
