@@ -153,6 +153,8 @@ fi
 alias g='cd $(ghq list -p | fzf --prompt "Project > ")'
 alias ..="cd .."
 alias k="kubectl"
+alias rm='echo "Do not use this command. You should be use trash-put(trm)"; false'
+alias trm='trash-put'
 
 # initialise completions with ZSH's compinit
 # Use modern completion system

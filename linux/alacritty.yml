@@ -24,7 +24,7 @@
 #TERM: alacritty
 
 window:
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 #window:
 # Window dimensions (changes require restart)
 #
