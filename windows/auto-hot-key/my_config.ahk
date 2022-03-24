@@ -133,7 +133,7 @@ is_target()
   If is_target()
     Send %A_ThisHotkey%
   Else
-    Send +^e
+    Send ^e
   Return
 
 ; <shift><alt>b
