@@ -112,7 +112,7 @@ font:
     family: Fira Code
   bold_italic:
     family: Fira Code
-  size: 14.0
+  size: 12.0
   offset:
     x: 1
   glyph_offset:
