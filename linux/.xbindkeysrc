@@ -1,9 +1,26 @@
+##################################################
+# For logicool
+##################################################
+# "xvkbd -xsendevent -text "\[XF86Back]""
+# m:0x0 + b:13
+# "xvkbd -xsendevent -text "\[XF86Forward]""
+# m:0x0 + b:14
+
+##################################################
+# For Kensington ProFit Ergo Vertical Wireless Trackball
+##################################################
 "xvkbd -xsendevent -text "\[XF86Back]""
 m:0x0 + b:13
 "xvkbd -xsendevent -text "\[XF86Forward]""
 m:0x0 + b:14
+"xdotool key ctrl+Tab"
+m:0x0 + b:11
+"xdotool key ctrl+Shift+Tab"
+m:0x0 + b:10
 
-" bind shift + vertical scroll to horizontal scroll events
-" see: https://coderwall.com/p/xnez3g/horizontal-scroll-with-mouse-under-linux
-" (xbindkey '(shift "b:4") "xte 'mouseclick 6'")
-" (xbindkey '(shift "b:5") "xte 'mouseclick 7'")
+##################################################
+# bind shift + vertical scroll to horizontal scroll events
+# see: https://coderwall.com/p/xnez3g/horizontal-scroll-with-mouse-under-linux
+##################################################
+# (xbindkey '(shift "b:4") "xte 'mouseclick 6'")
+# (xbindkey '(shift "b:5") "xte 'mouseclick 7'")
