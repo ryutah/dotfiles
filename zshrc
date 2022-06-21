@@ -58,7 +58,7 @@ zinit light zsh-users/zsh-completions
 zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 zinit ice as"completion" cp"gibo-completion.zsh -> _gibo"
-zinit snippet https://github.com/simonwhitaker/gibo/blob/master/shell-completions/gibo-completion.zsh
+zinit snippet https://github.com/simonwhitaker/gibo/blob/main/shell-completions/gibo-completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
