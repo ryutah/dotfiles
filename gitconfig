@@ -1,5 +1,7 @@
 [credential "https://github.com"]
 	helper = !gh auth git-credential
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh
 [user]
 	email = 6662577+ryutah@users.noreply.github.com
 	name = ryutah
@@ -8,3 +10,7 @@
 	quotepath = false
 [ghq]
 	root = ~/projects
+[init]
+	defaultBranch = main
+[alias]
+	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
