@@ -141,6 +141,11 @@ if which podman > /dev/null 2>&1 && [[ ! -f ${my_completions}/_podman ]]; then
 fi
 fpath=(${my_completions} ${fpath})
 
+# pipenv config
+if which pipenv > /dev/null 2>&1; then
+    eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+fi
+
 # aliass
 alias c="clear"
 alias ls="exa"

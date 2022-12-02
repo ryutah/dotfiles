@@ -1,6 +1,11 @@
 {
+  "$help": "https://aka.ms/terminal-documentation",
   "$schema": "https://aka.ms/terminal-profiles-schema",
   "actions": [
+    {
+      "command": "paste",
+      "keys": "ctrl+shift+v"
+    },
     {
       "command": {
         "action": "copy",
@@ -11,10 +16,6 @@
     {
       "command": "find",
       "keys": "ctrl+shift+f"
-    },
-    {
-      "command": "paste",
-      "keys": "ctrl+shift+v"
     },
     {
       "command": {
@@ -34,21 +35,21 @@
   "copyFormatting": "none",
   "copyOnSelect": false,
   "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-  "launchMode": "maximizedFocus",
+  "launchMode": "maximized",
   "profiles": {
     "defaults": {
-      "fontFace": "FiraCode NF",
-      "fontSize": 12
+      "font": {
+        "face": "FiraCode NF",
+        "size": 12
+      }
     },
     "list": [
       {
-        "commandline": "powershell.exe",
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "hidden": false,
         "name": "Windows PowerShell"
       },
       {
-        "commandline": "cmd.exe",
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "hidden": false,
         "name": "\u30b3\u30de\u30f3\u30c9 \u30d7\u30ed\u30f3\u30d7\u30c8"
@@ -56,14 +57,16 @@
       {
         "colorScheme": "Campbell",
         "experimental.retroTerminalEffect": false,
-        "fontFace": "FiraCode NF Retina",
-        "fontSize": 12,
-        "fontWeight": "normal",
+        "font": {
+          "face": "FiraCode NF Retina",
+          "size": 12,
+          "weight": "normal"
+        },
         "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "hidden": false,
         "name": "Ubuntu",
         "source": "Windows.Terminal.Wsl",
-        "startingDirectory": "//wsl$/Ubuntu/home/ryutah",
+        "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\ryutah",
         "useAcrylic": false
       },
       {
