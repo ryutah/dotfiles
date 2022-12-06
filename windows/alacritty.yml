@@ -190,8 +190,8 @@ colors:
   #  background: '#1d1f21'
   #  foreground: '#c5c8c6'
   primary:
-    background: "#000000"
-    foreground: "#ffffff"
+    background: "#1d1f21"
+    foreground: "#c5c8c6"
 
 # Bright and dim foreground colors
 #
