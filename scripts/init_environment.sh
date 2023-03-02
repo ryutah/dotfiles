@@ -21,4 +21,5 @@ zsh ./npm.sh
 
 if [[ $(uname -a | grep 'microsoft') != "" ]]; then
   ./wsl.sh
+  ./win32yank.sh
 fi
