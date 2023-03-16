@@ -108,6 +108,10 @@ fi
 if which podman > /dev/null 2>&1 && [[ ! -f ${my_completions}/_podman ]]; then
     podman completion -f "${my_completions}/_podman" zsh
 fi
+# enable buf completion
+if which buf > /dev/null 2>&1 && [[ ! -f ${my_completions}/_buf ]]; then
+    buf completion zsh > "${my_completions}/_buf"
+fi
 fpath=(${my_completions} ${fpath})
 
 # pipenv config
