@@ -2,3 +2,4 @@ yarn
 typescript
 parcel@next
 firebase-tools
+@bufbuild/buf
