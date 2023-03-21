@@ -32,6 +32,12 @@ is_target()
   Return 0
 }
 
+is_vscode()
+{
+  IfWinActive,ahk_exe Code.exe ; VSCode
+    Return 1
+}
+
 ; <ctrl>b
 ^b::
   If is_target()
@@ -98,7 +104,7 @@ is_target()
 
 ; <ctrl>d
 ^d::
-  If is_target()
+  If (is_target() or is_vscode())
     Send %A_ThisHotkey%
   Else
     Send {Del}
@@ -183,7 +189,7 @@ is_target()
 ; <ctrl>u
 ; delete chars from cursor to beginning of line
 ^u::
-  If is_target()
+  If (is_target() or is_vscode())
     Send %A_ThisHotkey%
   Else
   {
