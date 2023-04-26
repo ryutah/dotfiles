@@ -3,3 +3,4 @@ mycli
 pipenv
 pgcli
 podman-compose
+sqlfluff
