@@ -47,5 +47,5 @@ asdf global kind $(asdf list kind)
 asdf global java openjdk-19.0.1
 asdf global deno $(asdf list deno)
 
-ln -s ${wd}/asdf/default-npm-packages ${HOME}/.default-npm-packages
-ln -s ${wd}/asdf/default-python-packages ${HOME}/.default-python-packages
+ln -f -s ${wd}/asdf/default-npm-packages ${HOME}/.default-npm-packages
+ln -f -s ${wd}/asdf/default-python-packages ${HOME}/.default-python-packages

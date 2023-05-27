@@ -4,4 +4,4 @@ cd $(dirname $0)/..
 wd=$(pwd)
 
 set -eux
-ln -s ${wd}/gitconfig ${HOME}/.gitconfig
+ln -f -s ${wd}/gitconfig ${HOME}/.gitconfig
