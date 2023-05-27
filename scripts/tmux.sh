@@ -5,4 +5,4 @@ wd=$(pwd)
 
 set -eux
 
-ln -s ${wd}/tmux.conf ${HOME}.tmux.conf
+ln -s ${wd}/tmux.conf ${HOME}/.tmux.conf

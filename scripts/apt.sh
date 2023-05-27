@@ -50,4 +50,6 @@ sudo apt -y install \
   graphviz \
   graphviz-dev \
   jq \
-  apt-transport-https
+  apt-transport-https \
+  podman \
+  g++
