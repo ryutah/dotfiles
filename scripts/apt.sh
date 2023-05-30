@@ -52,4 +52,5 @@ sudo apt -y install \
   jq \
   apt-transport-https \
   podman \
-  g++
+  g++ \
+  podman-docker
