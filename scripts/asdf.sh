@@ -11,6 +11,9 @@ fi
 
 export PATH=${HOME}/.asdf/bin:${PATH}
 
+ln -f -s ${wd}/asdf/default-npm-packages ${HOME}/.default-npm-packages
+ln -f -s ${wd}/asdf/default-python-packages ${HOME}/.default-python-packages
+
 asdf plugin add ghq
 asdf plugin add python
 asdf plugin add fzf
@@ -46,6 +49,3 @@ asdf global terraform $(asdf list terraform)
 asdf global kind $(asdf list kind)
 asdf global java openjdk-19.0.1
 asdf global deno $(asdf list deno)
-
-ln -f -s ${wd}/asdf/default-npm-packages ${HOME}/.default-npm-packages
-ln -f -s ${wd}/asdf/default-python-packages ${HOME}/.default-python-packages
