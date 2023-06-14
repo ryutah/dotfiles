@@ -112,6 +112,10 @@ fi
 if which buf > /dev/null 2>&1 && [[ ! -f ${my_completions}/_buf ]]; then
     buf completion zsh > "${my_completions}/_buf"
 fi
+# enable terraform completion
+if which terraform > /dev/null; then
+  complete -o nospace -C $(asdf where terraform)/bin/terraform terraform
+fi
 fpath=(${my_completions} ${fpath})
 
 # pipenv config
