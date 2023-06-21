@@ -25,6 +25,7 @@ asdf plugin add terraform
 asdf plugin add java
 asdf plugin add deno
 asdf plugin-add kind https://github.com/reegnz/asdf-kind.git
+asdf plugin-add tflint https://github.com/skyzyx/asdf-tflint
 
 asdf install ghq latest
 asdf install python latest
@@ -37,6 +38,7 @@ asdf install terraform latest
 asdf install kind latest
 asdf install java openjdk-19.0.1
 asdf install deno latest
+asdf install tflint 0.46.1
 
 asdf global ghq $(asdf list ghq)
 asdf global python $(asdf list python)
@@ -49,3 +51,4 @@ asdf global terraform $(asdf list terraform)
 asdf global kind $(asdf list kind)
 asdf global java openjdk-19.0.1
 asdf global deno $(asdf list deno)
+asdf global tflint 0.46.1
