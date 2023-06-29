@@ -53,4 +53,7 @@ sudo apt -y install \
   apt-transport-https \
   podman \
   g++ \
-  podman-docker
+  podman-docker \
+  postgresql-client \
+  postgresql-client-common \
+  libpq-dev
