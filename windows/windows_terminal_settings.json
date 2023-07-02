@@ -39,7 +39,7 @@
   "profiles": {
     "defaults": {
       "font": {
-        "face": "FiraCode NF",
+        "face": "FiraCode Nerd Font",
         "size": 12
       }
     },
@@ -58,7 +58,7 @@
         "colorScheme": "Campbell",
         "experimental.retroTerminalEffect": false,
         "font": {
-          "face": "FiraCode NF Retina",
+          "face": "FiraCode Nerd Font",
           "size": 12,
           "weight": "normal"
         },
