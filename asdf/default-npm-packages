@@ -2,3 +2,4 @@ yarn
 typescript
 firebase-tools
 @bufbuild/buf
+pnpm
