@@ -56,4 +56,5 @@ sudo apt -y install \
   podman-docker \
   postgresql-client \
   postgresql-client-common \
-  libpq-dev
+  libpq-dev \
+  fonts-ipafont
