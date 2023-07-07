@@ -78,6 +78,9 @@ export EDITOR=nvim
 # to be remove before slash with <ctrl+w>
 # see: https://cameong.hatenablog.com/entry/20140321/1395377298
 export WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
+if which pack > /dev/null 2>&1; then
+  export DOCKER_HOST="unix://$(podman info -f "{{.Host.RemoteSocket.Path}}")"
+fi
 
 # direnv setup
 eval "$(direnv hook zsh)"
@@ -116,6 +119,11 @@ fi
 if which terraform > /dev/null; then
   complete -o nospace -C $(asdf where terraform)/bin/terraform terraform
 fi
+# enable pack completion
+if which pack > /dev/null 2>&1; then
+  . $(pack completion --shell zsh)
+fi
+
 fpath=(${my_completions} ${fpath})
 
 # pipenv config
