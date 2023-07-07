@@ -160,7 +160,7 @@ is_vscode()
 
 ; <ctrl>w
 ^w::
-  If is_target()
+  If (is_target() or is_vscode())
     Send %A_ThisHotkey%
   Else
     Send ^x
@@ -319,6 +319,22 @@ is_vscode()
     Send %A_ThisHotkey%
   Else
     Send ^u
+  Return
+
+; <alt>p -> <ctrl>p
+!p::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send ^p
+  Return
+
+; <alt><shift>p -> <ctrl><shift>p
++!p::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send +^p
   Return
 
 ; ===========================================
