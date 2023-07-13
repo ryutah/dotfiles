@@ -4,3 +4,4 @@ pipenv
 pgcli
 podman-compose
 sqlfluff
+shandy-sqlfmt
