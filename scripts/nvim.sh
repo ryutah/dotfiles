@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-zsh -c "ghq get https://github.com/ryutah/neovim_setting.git"
+git clone https://github.com/ryutah/neovim_setting.git ${HOME}/projects/github.com/${USER}/neovim_setting
