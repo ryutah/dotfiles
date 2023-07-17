@@ -63,4 +63,5 @@ sudo apt -y install \
   postgresql-client-common \
   libpq-dev \
   fonts-ipafont \
-  pack-cli
+  pack-cli \
+  cloc
