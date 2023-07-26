@@ -123,6 +123,10 @@ fi
 if which pack > /dev/null 2>&1; then
   . $(pack completion --shell zsh)
 fi
+# enable aws-cli completion
+if which aws_completer > /dev/null 2>&1; then
+  complete -C "$(which aws_completer)" aws
+fi
 
 fpath=(${my_completions} ${fpath})
 
