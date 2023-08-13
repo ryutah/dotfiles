@@ -17,7 +17,7 @@ zsh ./asdf.sh
 zsh ./npm.sh
 ./editorconfig.sh
 ./gcloud.sh
-./gibo.sh
+zsh ./gibo.sh
 ./ctags.sh
 
 if [[ $(uname -a | grep 'microsoft') != "" ]]; then

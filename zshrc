@@ -78,9 +78,6 @@ export EDITOR=nvim
 # to be remove before slash with <ctrl+w>
 # see: https://cameong.hatenablog.com/entry/20140321/1395377298
 export WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
-if which pack > /dev/null 2>&1; then
-  export DOCKER_HOST="unix://$(podman info -f "{{.Host.RemoteSocket.Path}}")"
-fi
 
 # direnv setup
 eval "$(direnv hook zsh)"
@@ -126,6 +123,10 @@ fi
 # enable aws-cli completion
 if which aws_completer > /dev/null 2>&1; then
   complete -C "$(which aws_completer)" aws
+fi
+# enable gibo completion
+if which gibo > /dev/null 2>&1 && [[ ! -f ${my_completions}/_gibo ]]; then
+  gibo completion zsh > "${my_completions}/_gibo"
 fi
 
 fpath=(${my_completions} ${fpath})
@@ -187,8 +188,6 @@ zinit light zsh-users/zsh-completions
 #   - https://blog.katio.net/page/zplugin
 zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
-zinit ice as"completion" cp"gibo-completion.zsh -> _gibo"
-zinit snippet https://github.com/simonwhitaker/gibo/blob/main/shell-completions/gibo-completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
