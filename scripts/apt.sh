@@ -68,3 +68,12 @@ sudo apt -y install \
 # sudo apt -y install \
 #   podman \
 #   podman-docker \
+
+# for php
+sudo apt -y install \
+  libcurl4-openssl-dev \
+  re2c \
+  libgd-dev \
+  libonig-dev \
+  libpq-dev \
+  libzip-dev
