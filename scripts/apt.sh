@@ -56,12 +56,15 @@ sudo apt -y install \
   graphviz-dev \
   jq \
   apt-transport-https \
-  podman \
   g++ \
-  podman-docker \
   postgresql-client \
   postgresql-client-common \
   libpq-dev \
   fonts-ipafont \
   pack-cli \
   cloc
+
+# NOTE(ryutah): podman は wsl では動作不安定なので、いったん導入をやめる
+# sudo apt -y install \
+#   podman \
+#   podman-docker \

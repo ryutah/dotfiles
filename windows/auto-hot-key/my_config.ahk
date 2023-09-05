@@ -376,4 +376,4 @@ Esc::
 #WheelUp::WheelLeft
 
 ; See https://github.com/pmb6tz/windows-desktop-switcher
-#Include lib\desktop_switcher.ahk
+; #Include lib\desktop_switcher.ahk
