@@ -5,3 +5,4 @@ pgcli
 podman-compose
 sqlfluff
 shandy-sqlfmt
+git-remote-codecommit
