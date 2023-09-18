@@ -19,6 +19,7 @@ zsh ./npm.sh
 ./gcloud.sh
 zsh ./gibo.sh
 ./ctags.sh
+zsh ./rtty.sh
 
 if [[ $(uname -a | grep 'microsoft') != "" ]]; then
   ./wsl.sh

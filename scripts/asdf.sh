@@ -26,6 +26,9 @@ asdf plugin add java
 asdf plugin add deno
 asdf plugin-add kind https://github.com/reegnz/asdf-kind.git
 asdf plugin-add tflint https://github.com/skyzyx/asdf-tflint
+asdf plugin add lazydocker https://github.com/comdotlinux/asdf-lazydocker.git
+asdf plugin add lazygit https://github.com/nklmilojevic/asdf-lazygit.git
+asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
 
 asdf install ghq latest
 asdf install python latest
@@ -39,16 +42,22 @@ asdf install kind latest
 asdf install java openjdk-19.0.1
 asdf install deno latest
 asdf install tflint 0.46.1
+asdf install lazydocker latest
+asdf install lazygit latest
+asdf install poetry latest
 
-asdf global ghq $(asdf list ghq)
-asdf global python $(asdf list python)
-asdf global fzf $(asdf list fzf)
-asdf global neovim $(asdf list neovim)
-asdf global golang $(asdf list golang)
-asdf global nodejs $(asdf list nodejs)
-asdf global tmux $(asdf list tmux)
-asdf global terraform $(asdf list terraform)
-asdf global kind $(asdf list kind)
+asdf global ghq latest
+asdf global python latest
+asdf global fzf latest
+asdf global neovim latest
+asdf global golang latest
+asdf global nodejs latest
+asdf global tmux latest
+asdf global terraform latest
+asdf global kind latest
 asdf global java openjdk-19.0.1
-asdf global deno $(asdf list deno)
+asdf global deno latest
 asdf global tflint 0.46.1
+asdf global lazydocker latest
+asdf global lazygit latest
+asdf global poetry latest

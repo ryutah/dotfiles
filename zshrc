@@ -157,6 +157,8 @@ elif which 'docker' > /dev/null 2>&1; then
   alias psql='podman container run -it --rm --net host postgres:15.2 psql'
 fi
 
+alias rtty='rtty run zsh -v --font "FiraCode Nerd Font" --font-size 16 -p '
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [[ ! -f ${ZINIT_HOME}/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
