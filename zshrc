@@ -149,6 +149,7 @@ alias g='cd $(ghq list -p | fzf --prompt "Project > ")'
 alias ..="cd .."
 alias k="kubectl"
 alias rm='echo "Do not use this command. You should be use trash-put(trm)"; false'
+alias frm='/usr/bin/rm'
 alias trm='trash-put'
 
 if which 'podman' > /dev/null 2>&1; then
