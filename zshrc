@@ -41,16 +41,16 @@ fi
 
 # fzf_select_history is open command history with fzf
 fzf_select_history() {
-    BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
-    CURSOR=$#BUFFER
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  CURSOR=$#BUFFER
 }
 
 # ide is open neovim with terminal split
 ide() {
-    tmux split-window -v -p 30
-    tmux split-window -h
-    tmux select-pane -t 1
-    nvim $1
+  tmux split-window -v -p 30
+  tmux split-window -h
+  tmux select-pane -t 1
+  nvim $1
 }
 
 # command history fazzy find
@@ -59,8 +59,8 @@ bindkey '^r' fzf_select_history
 
 # Google Cloud SDK
 if [[ -x ${HOME}/.local/google-cloud-sdk ]]; then
-    source ${HOME}/.local/google-cloud-sdk/path.zsh.inc
-    source ${HOME}/.local/google-cloud-sdk/completion.zsh.inc
+  source ${HOME}/.local/google-cloud-sdk/path.zsh.inc
+  source ${HOME}/.local/google-cloud-sdk/completion.zsh.inc
 fi
 
 # asdf config
@@ -85,32 +85,32 @@ eval "$(direnv hook zsh)"
 # adds fpath
 my_completions=${HOME}/.local/share/zsh/completions
 if [[ ! -d ${my_completions} ]]; then
-    mkdir -p ${my_completions}
+  mkdir -p ${my_completions}
 fi
 # enable gh completion
 if which gh > /dev/null 2>&1 && [[ ! -f ${my_completions}/_gh ]]; then
-    gh completion -s zsh > ${my_completions}/_gh
+  gh completion -s zsh > ${my_completions}/_gh
 fi
 # enable rustup completion
 if which rustup > /dev/null 2>&1 && [[ ! -f ${my_completions}/_rustup ]]; then
-    rustup completions zsh > ${my_completions}/_rustup
-    cat ${HOME}/.rustup/toolchains/$(rustup default | grep default | sed -E 's/^(.+)\s\(default\)$/\1/')/share/zsh/site-functions/_cargo > ${my_completions}/_cargo
+  rustup completions zsh > ${my_completions}/_rustup
+  cat ${HOME}/.rustup/toolchains/$(rustup default | grep default | sed -E 's/^(.+)\s\(default\)$/\1/')/share/zsh/site-functions/_cargo > ${my_completions}/_cargo
 fi
 # enable kubectl completion
 if which kubectl > /dev/null 2>&1 && [[ ! -f ${my_completions}/_kubectl ]]; then
-    kubectl completion zsh > ${my_completions}/_kubectl
+  kubectl completion zsh > ${my_completions}/_kubectl
 fi
 # enable kind completion
 if which kind > /dev/null 2>&1 && [[ ! -f ${my_completions}/_kind ]]; then
-    kind completion zsh > ${my_completions}/_kind
+  kind completion zsh > ${my_completions}/_kind
 fi
 # enable podman completion
 if which podman > /dev/null 2>&1 && [[ ! -f ${my_completions}/_podman ]]; then
-    podman completion -f "${my_completions}/_podman" zsh
+  podman completion -f "${my_completions}/_podman" zsh
 fi
 # enable buf completion
 if which buf > /dev/null 2>&1 && [[ ! -f ${my_completions}/_buf ]]; then
-    buf completion zsh > "${my_completions}/_buf"
+  buf completion zsh > "${my_completions}/_buf"
 fi
 # enable terraform completion
 if which terraform > /dev/null; then
@@ -137,17 +137,17 @@ fpath=(${my_completions} ${fpath})
 
 # pipenv config
 if which pipenv > /dev/null 2>&1; then
-    eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+  eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 fi
 
 # aliass
 alias c="clear"
 alias ls="exa"
 if which batcat > /dev/null 2>&1; then
-    alias bat="batcat"
+  alias bat="batcat"
 fi
 if which 'fdfind' > /dev/null 2>&1; then
-    alias fd="fdfind"
+  alias fd="fdfind"
 fi
 alias g='cd $(ghq list -p | fzf --prompt "Project > ")'
 alias ..="cd .."
@@ -166,9 +166,9 @@ alias rtty='rtty run zsh -v --font "FiraCode Nerd Font" --font-size 16 -p '
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [[ ! -f ${ZINIT_HOME}/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    mkdir -p "$(dirname $ZINIT_HOME)"
-    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+  print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -177,24 +177,25 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
+  zdharma-continuum/zinit-annex-as-monitor \
+  zdharma-continuum/zinit-annex-bin-gem-node \
+  zdharma-continuum/zinit-annex-patch-dl \
+  zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
 
 # Install Plugins
-zinit light zdharma/history-search-multi-word
-zinit light zsh-users/zsh-syntax-highlighting
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-zinit ice blockf
-zinit light zsh-users/zsh-completions
+zinit light-mode for \
+  zdharma/history-search-multi-word \
+  zsh-users/zsh-syntax-highlighting \
+  depth=1 romkatv/powerlevel10k
+
 # see:
 #   - https://zenn.dev/xeres/articles/2021-05-05-understanding-zinit-syntax
 #   - https://blog.katio.net/page/zplugin
-zinit ice wait lucid atload'_zsh_autosuggest_start'
-zinit light zsh-users/zsh-autosuggestions
+zinit light-mode wait lucid for \
+  blockf zsh-users/zsh-completions \
+  atload'_zsh_autosuggest_start' zsh-users/zsh-autosuggestions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
