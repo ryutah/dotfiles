@@ -62,7 +62,8 @@ sudo apt -y install \
   libpq-dev \
   fonts-ipafont \
   pack-cli \
-  cloc
+  cloc \
+  libwebkit2gtk-4.0-dev
 
 # NOTE(ryutah): podman は wsl では動作不安定なので、いったん導入をやめる
 # sudo apt -y install \
