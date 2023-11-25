@@ -75,6 +75,7 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_DEFAULT_COMMAND="fd -H -E .git"
 export PYTHON3_PATH=$(asdf where python)/bin/python
 export EDITOR=nvim
+export BAT_THEME='Visual Studio Dark+'
 # to be remove before slash with <ctrl+w>
 # see: https://cameong.hatenablog.com/entry/20140321/1395377298
 export WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
@@ -207,3 +208,7 @@ autoload -Uz _zinit
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
