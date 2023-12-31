@@ -20,6 +20,7 @@ zsh ./npm.sh
 zsh ./gibo.sh
 ./ctags.sh
 zsh ./rtty.sh
+zsh ./ttyd.sh
 
 if [[ $(uname -a | grep 'microsoft') != "" ]]; then
   ./wsl.sh

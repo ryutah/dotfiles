@@ -164,6 +164,7 @@ elif which 'docker' > /dev/null 2>&1; then
 fi
 
 alias rtty='rtty run zsh -v --font "FiraCode Nerd Font" --font-size 16 -p '
+alias ttyd="ttyd -B -t 'fontFamily=FiraCode Nerd Font' -t 'theme={\"background\": \"#000000\"}' -W '$SHELL'"
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [[ ! -f ${ZINIT_HOME}/zinit.zsh ]]; then
