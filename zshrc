@@ -3,6 +3,9 @@
 autoload -Uz promptinit
 promptinit
 prompt adam1
+# fix `command not found: complete` error
+# see: https://qiita.com/suke_masa/items/30de029fbc973c34c202
+autoload -U +X bashcompinit && bashcompinit
 
 setopt histignorealldups sharehistory
 
