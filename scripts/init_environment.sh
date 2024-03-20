@@ -20,9 +20,12 @@ zsh ./npm.sh
 zsh ./gibo.sh
 ./ctags.sh
 zsh ./rtty.sh
-zsh ./ttyd.sh
 
-if [[ $(uname -a | grep 'microsoft') != "" ]]; then
-  ./wsl.sh
-  ./win32yank.sh
-fi
+# 使わないかもなのでいったんコメントアウト
+# zsh ./ttyd.sh
+
+# もう必要なくなってるかも？
+# if [[ $(uname -a | grep 'microsoft') != "" ]]; then
+#   ./wsl.sh
+#   ./win32yank.sh
+# fi
