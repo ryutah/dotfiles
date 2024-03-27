@@ -7,4 +7,5 @@
 
 ## lib
 
-- [IME.ahk](https://w.atwiki.jp/eamat/pages/17.html)
+- [IME.ahk](https://github.com/k-ayaki/IMEv2.ahk)
+  - see also [Autohotkey v2.0のIME制御用 関数群 IMEv2.ahk #AutoHotkey - Qiita](https://qiita.com/kenichiro_ayaki/items/d55005df2787da725c6f)
