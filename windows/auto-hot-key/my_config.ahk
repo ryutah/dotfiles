@@ -38,13 +38,19 @@ is_vscode()
     Return 1
 }
 
+send_key(key)
+{
+  Send(key)
+  Sleep(2)
+}
+
 ; <ctrl>b
 ^b::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{Left}")
+    send_key("{Left}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -52,9 +58,9 @@ is_vscode()
 +^b::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("+{Left}")
+    send_key("+{Left}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -62,9 +68,9 @@ is_vscode()
 ^f::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{Right}")
+    send_key("{Right}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -72,9 +78,9 @@ is_vscode()
 +^f::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("+{Right}")
+    send_key("+{Right}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -82,9 +88,9 @@ is_vscode()
 ^p::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{Up}")
+    send_key("{Up}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -92,9 +98,9 @@ is_vscode()
 ^n::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{Down}")
+    send_key("{Down}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -102,9 +108,9 @@ is_vscode()
 !n::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^n")
+    send_key("^n")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -112,9 +118,9 @@ is_vscode()
 +^n::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("+{Down}")
+    send_key("+{Down}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -122,9 +128,9 @@ is_vscode()
 ^d::
 { ; V1toV2: Added bracket
   If (is_target() or is_vscode())
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{Del}")
+    send_key("{Del}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -132,9 +138,9 @@ is_vscode()
 ^h::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{BS}")
+    send_key("{BS}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -142,9 +148,9 @@ is_vscode()
 ^a::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{Home}")
+    send_key("{Home}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -152,9 +158,9 @@ is_vscode()
 ^e::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{End}")
+    send_key("{End}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -162,9 +168,9 @@ is_vscode()
 !e::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^e")
+    send_key("^e")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -172,9 +178,9 @@ is_vscode()
 +!b::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("+^{Left}")
+    send_key("+^{Left}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -182,9 +188,9 @@ is_vscode()
 +!f::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("+^{Right}")
+    send_key("+^{Right}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -192,9 +198,9 @@ is_vscode()
 ^w::
 { ; V1toV2: Added bracket
   If (is_target() or is_vscode())
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^x")
+    send_key("^x")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -202,9 +208,9 @@ is_vscode()
 ^y::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^v")
+    send_key("^v")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -213,11 +219,11 @@ is_vscode()
 ^k::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{ShiftDown}{END}{SHIFTUP}")
+    send_key("{ShiftDown}{END}{SHIFTUP}")
     Sleep(50)
-    Send("{Del}")
+    send_key("{Del}")
     ;Send ^x
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
@@ -227,12 +233,12 @@ is_vscode()
 ^u::
 { ; V1toV2: Added bracket
   If (is_target() or is_vscode())
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
   {
-    Send("{ShiftDown}{HOME}{SHIFTUP}")
+    send_key("{ShiftDown}{HOME}{SHIFTUP}")
     Sleep(50)
-    Send("{Del}")
+    send_key("{Del}")
     ;Send ^x
   }
   Return
@@ -243,9 +249,9 @@ is_vscode()
 ^m::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("{Enter}")
+    send_key("{Enter}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -253,9 +259,9 @@ is_vscode()
 ^\::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^a")
+    send_key("^a")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -263,9 +269,9 @@ is_vscode()
 !f::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^f")
+    send_key("^f")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -273,9 +279,9 @@ is_vscode()
 !w::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^w")
+    send_key("^w")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -283,9 +289,9 @@ is_vscode()
 +!t::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("+^t")
+    send_key("+^t")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -293,9 +299,9 @@ is_vscode()
 +!n::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("+^n")
+    send_key("+^n")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -303,9 +309,9 @@ is_vscode()
 !a::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^a")
+    send_key("^a")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -313,9 +319,9 @@ is_vscode()
 !k::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^k")
+    send_key("^k")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -323,9 +329,9 @@ is_vscode()
 !d::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^d")
+    send_key("^d")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -333,9 +339,9 @@ is_vscode()
 !y::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^y")
+    send_key("^y")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -343,9 +349,9 @@ is_vscode()
 !z::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^z")
+    send_key("^z")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -353,9 +359,9 @@ is_vscode()
 !q::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("!{F4}")
+    send_key("!{F4}")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -363,9 +369,9 @@ is_vscode()
 !b::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^b")
+    send_key("^b")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -373,9 +379,9 @@ is_vscode()
 !i::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^i")
+    send_key("^i")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -383,9 +389,9 @@ is_vscode()
 !u::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^u")
+    send_key("^u")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -393,9 +399,9 @@ is_vscode()
 !p::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("^p")
+    send_key("^p")
   Return
 } ; V1toV2: Added Bracket before hotkey or Hotstring
 
@@ -403,9 +409,9 @@ is_vscode()
 +!p::
 { ; V1toV2: Added bracket
   If is_target()
-    Send(A_ThisHotkey)
+    send_key(A_ThisHotkey)
   Else
-    Send("+^p")
+    send_key("+^p")
   Return
 }
 
@@ -423,7 +429,7 @@ Esc::
   if (getIMEMode = 1) {
     IME_SET(0)
   }
-  Send("{Esc}")
+  send_key("{Esc}")
   Return
 }
 
@@ -435,7 +441,7 @@ Esc::
   if (getIMEMode = 1) {
     IME_SET(0)
   }
-  Send(A_ThisHotkey)
+  send_key(A_ThisHotkey)
   Return
 } ; V1toV2: Added bracket in the end
 #HotIf
