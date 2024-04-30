@@ -20,6 +20,7 @@ zsh ./npm.sh
 zsh ./gibo.sh
 ./ctags.sh
 zsh ./rtty.sh
+./ngrok.sh
 
 # 使わないかもなのでいったんコメントアウト
 # zsh ./ttyd.sh
