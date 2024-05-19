@@ -17,7 +17,6 @@ zsh ./asdf.sh
 zsh ./npm.sh
 ./editorconfig.sh
 ./gcloud.sh
-zsh ./gibo.sh
 ./ctags.sh
 zsh ./rtty.sh
 ./ngrok.sh
