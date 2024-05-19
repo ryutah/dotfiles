@@ -56,6 +56,25 @@ ide() {
   nvim $1
 }
 
+# gitignore.io
+# see: https://docs.gitignore.io/
+gi() {
+  curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@
+}
+
+# autocomplete for gitignore.io
+# see: https://docs.gitignore.io/use/advanced-command-line#oh-my-zsh
+_gitignoreio_get_command_list() {
+  curl -sL https://www.toptal.com/developers/gitignore/api/list | tr "," "\n"
+}
+
+_gitignoreio () {
+  compset -P '*,'
+  compadd -S '' `_gitignoreio_get_command_list`
+}
+
+compdef _gitignoreio gi
+
 # command history fazzy find
 zle -N fzf_select_history
 bindkey '^r' fzf_select_history
