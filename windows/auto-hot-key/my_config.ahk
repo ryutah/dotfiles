@@ -40,7 +40,7 @@ is_vscode()
 
 send_key(key)
 {
-  Send(key)
+  SendInput(key)
   Sleep(2)
 }
 
