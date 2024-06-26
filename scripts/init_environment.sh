@@ -20,6 +20,7 @@ zsh ./npm.sh
 ./ctags.sh
 zsh ./rtty.sh
 ./ngrok.sh
+./lazygit.sh
 
 # 使わないかもなのでいったんコメントアウト
 # zsh ./ttyd.sh
