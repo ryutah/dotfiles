@@ -39,9 +39,9 @@ asdf install nodejs latest
 asdf install tmux latest
 asdf install terraform latest
 asdf install kind latest
-asdf install java openjdk-19.0.1
+asdf install java openjdk-23
 asdf install deno latest
-asdf install tflint 0.46.1
+asdf install tflint 0.53.0
 asdf install lazydocker latest
 asdf install lazygit latest
 asdf install poetry latest
@@ -55,9 +55,9 @@ asdf global nodejs latest
 asdf global tmux latest
 asdf global terraform latest
 asdf global kind latest
-asdf global java openjdk-19.0.1
+asdf global java openjdk-23
 asdf global deno latest
-asdf global tflint 0.46.1
+asdf global tflint 0.53.0
 asdf global lazydocker latest
 asdf global lazygit latest
 asdf global poetry latest

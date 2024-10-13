@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+sudo apt-get install software-properties-common
+
 # for github cli
-type -p curl >/dev/null || sudo apt install curl -y
+type -p curl >/dev/null || sudo apt-get install curl -y
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg &&
   sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg &&
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
@@ -11,11 +13,11 @@ sudo apt-get update
 # for pack
 sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
 
-sudo apt update -y && sudo apt -y upgrade
+sudo apt-get update -y && sudo apt-get -y upgrade
 
-sudo apt -y install \
+sudo apt-get -y install \
+  build-essential \
   curl \
-  wslu \
   unzip \
   zsh \
   git \
@@ -63,7 +65,11 @@ sudo apt -y install \
   fonts-ipafont \
   pack-cli \
   cloc \
-  libwebkit2gtk-4.0-dev
+  libwebkit2gtk-4.1-dev
+
+# for python
+sudo apt-get -y install \
+  python-tk
 
 # NOTE(ryutah): podman は wsl では動作不安定なので、いったん導入をやめる
 # sudo apt -y install \
@@ -71,7 +77,7 @@ sudo apt -y install \
 #   podman-docker \
 
 # for php
-sudo apt -y install \
+sudo apt-get -y install \
   libcurl4-openssl-dev \
   re2c \
   libgd-dev \
