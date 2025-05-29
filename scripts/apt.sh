@@ -71,10 +71,8 @@ sudo apt-get -y install \
 sudo apt-get -y install \
   python-tk
 
-# NOTE(ryutah): podman は wsl では動作不安定なので、いったん導入をやめる
-# sudo apt -y install \
-#   podman \
-#   podman-docker \
+sudo apt -y install \
+  podman
 
 # for php
 sudo apt-get -y install \
