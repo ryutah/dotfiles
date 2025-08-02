@@ -86,7 +86,8 @@ if [[ -x ${HOME}/.local/google-cloud-sdk ]]; then
 fi
 
 # asdf config
-source ${HOME}/.asdf/asdf.sh
+export ASDF_DATA_DIR="${HOME}/.asdf"
+export PATH="${ASDF_DATA_DIR}/shims:$PATH"
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 

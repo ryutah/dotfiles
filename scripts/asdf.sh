@@ -6,7 +6,9 @@ wd=$(pwd)
 set -ux
 
 if [[ ! -d ${HOME}/.asdf ]]; then
-  git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf --branch v0.10.2
+  git clone https://github.com/asdf-vm/asdf.git ${HOME}/.asdf --branch v0.18.0
+  make
+  mv ./asdf ${HOME}/.local/bin/
 fi
 
 export PATH=${HOME}/.asdf/bin:${PATH}
