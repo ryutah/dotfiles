@@ -29,6 +29,7 @@ asdf plugin-add tflint https://github.com/skyzyx/asdf-tflint
 asdf plugin add lazydocker https://github.com/comdotlinux/asdf-lazydocker.git
 asdf plugin add lazygit https://github.com/nklmilojevic/asdf-lazygit.git
 asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
+asdf plugin add lua
 
 asdf install ghq latest
 asdf install python latest
@@ -45,6 +46,7 @@ asdf install tflint 0.53.0
 asdf install lazydocker latest
 asdf install lazygit latest
 asdf install poetry latest
+asdf install lua latest
 
 asdf global ghq latest
 asdf global python latest
@@ -61,3 +63,4 @@ asdf global tflint 0.53.0
 asdf global lazydocker latest
 asdf global lazygit latest
 asdf global poetry latest
+asdf global lua latest
