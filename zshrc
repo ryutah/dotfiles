@@ -155,6 +155,10 @@ fi
 if which pulumi > /dev/null 2>&1 && [[ ! -f ${my_completions}/_pulumi ]]; then
   pulumi gen-completion zsh > "${my_completions}/_pulumi"
 fi
+# enable asdf completion
+if which asdf > /dev/null 2>&1 && [[ ! -f ${my_completions}/_asdf ]]; then
+  asdf completion zsh > "${my_completions}/_asdf"
+fi
 
 fpath=(${my_completions} ${fpath})
 
