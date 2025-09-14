@@ -42,27 +42,27 @@ asdf install nodejs latest
 asdf install tmux latest
 asdf install terraform latest
 asdf install kind latest
-asdf install java openjdk-23
+asdf install java openjdk-25
 asdf install deno latest
-asdf install tflint 0.53.0
+asdf install tflint latest
 asdf install lazydocker latest
 asdf install lazygit latest
 asdf install poetry latest
 asdf install lua latest
 
-asdf global ghq latest
-asdf global python latest
-asdf global fzf latest
-asdf global neovim latest
-asdf global golang latest
-asdf global nodejs latest
-asdf global tmux latest
-asdf global terraform latest
-asdf global kind latest
-asdf global java openjdk-23
-asdf global deno latest
-asdf global tflint 0.53.0
-asdf global lazydocker latest
-asdf global lazygit latest
-asdf global poetry latest
-asdf global lua latest
+asdf set -u ghq latest
+asdf set -u python latest
+asdf set -u fzf latest
+asdf set -u neovim latest
+asdf set -u golang latest
+asdf set -u nodejs latest
+asdf set -u tmux latest
+asdf set -u terraform latest
+asdf set -u kind latest
+asdf set -u java openjdk-25
+asdf set -u deno latest
+asdf set -u tflint latest
+asdf set -u lazydocker latest
+asdf set -u lazygit latest
+asdf set -u poetry latest
+asdf set -u lua latest
