@@ -93,7 +93,8 @@ fpath=(${ASDF_DIR}/completions $fpath)
 
 # environment variables
 export GOPATH=${HOME}/.local/go
-export PATH=${HOME}/.cargo/bin:${HOME}/.krew/bin:${HOME}/.local/bin:${GOPATH}/bin:${PATH}
+export GOBIN=${GOPATH}/bin
+export PATH=${GOBIN}:${HOME}/.cargo/bin:${HOME}/.krew/bin:${HOME}/.local/bin:${PATH}
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_DEFAULT_COMMAND="fd -H -E .git"
 export PYTHON3_PATH=$(asdf where python)/bin/python
@@ -111,6 +112,11 @@ my_completions=${HOME}/.local/share/zsh/completions
 if [[ ! -d ${my_completions} ]]; then
   mkdir -p ${my_completions}
 fi
+# enable asdf completion
+if which asdf > /dev/null 2>&1 && [[ ! -f ${my_completions}/_asdf ]]; then
+  asdf completion zsh > ${my_completions}/_asdf
+fi
+
 # enable gh completion
 if which gh > /dev/null 2>&1 && [[ ! -f ${my_completions}/_gh ]]; then
   gh completion -s zsh > ${my_completions}/_gh
@@ -183,6 +189,7 @@ alias k="kubectl"
 alias rm='echo "Do not use this command. You should be use trash-put(trm)"; false'
 alias frm='/usr/bin/rm'
 alias trm='trash-put'
+alias docker=podman
 
 if which 'podman' > /dev/null 2>&1; then
   alias psql='podman container run -it --rm --net host postgres:15.2 psql'

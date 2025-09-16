@@ -26,8 +26,8 @@ asdf plugin add tmux
 asdf plugin add terraform
 asdf plugin add java
 asdf plugin add deno
-asdf plugin-add kind https://github.com/reegnz/asdf-kind.git
-asdf plugin-add tflint https://github.com/skyzyx/asdf-tflint
+asdf plugin add kind https://github.com/reegnz/asdf-kind.git
+asdf plugin add tflint https://github.com/skyzyx/asdf-tflint
 asdf plugin add lazydocker https://github.com/comdotlinux/asdf-lazydocker.git
 asdf plugin add lazygit https://github.com/nklmilojevic/asdf-lazygit.git
 asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
