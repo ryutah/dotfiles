@@ -33,6 +33,7 @@ asdf plugin add lazygit https://github.com/nklmilojevic/asdf-lazygit.git
 asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
 asdf plugin add lua
 asdf plugin add uv
+asdf plugin add golangci-lint
 
 asdf install ghq latest
 asdf install python latest
@@ -51,6 +52,7 @@ asdf install lazygit latest
 asdf install poetry latest
 asdf install lua latest
 asdf install uv latest
+asdf install golangci-lint latest
 
 asdf set -u ghq latest
 asdf set -u python latest
@@ -69,3 +71,4 @@ asdf set -u lazygit latest
 asdf set -u poetry latest
 asdf set -u lua latest
 asdf set -u uv latest
+asdf set -u golangci-lint latest
