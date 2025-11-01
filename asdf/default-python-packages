@@ -6,3 +6,4 @@ podman-compose
 sqlfluff
 shandy-sqlfmt
 git-remote-codecommit
+huggingface_hub
