@@ -65,7 +65,10 @@ sudo apt-get -y install \
   fonts-ipafont \
   pack-cli \
   cloc \
-  libwebkit2gtk-4.1-dev
+  libwebkit2gtk-4.1-dev \
+  llvm-dev \
+  libclang-dev \
+  clang
 
 # for python
 sudo apt-get -y install \

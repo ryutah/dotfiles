@@ -239,6 +239,7 @@ autoload -Uz _zinit
 
 # initialise completions with ZSH's compinit
 # Use modern completion system
+fpath+=~/.zfunc;
 autoload -Uz compinit
 compinit
 
